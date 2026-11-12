@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Create a source-only archive, with a hash manifest and no local build data."""
+"""Create a source-only archive without local build data."""
 import hashlib
-import json
 import os
 from pathlib import Path
 import re
@@ -78,9 +77,6 @@ def main():
             shutil.rmtree(entry)
         else:
             entry.unlink()
-    manifest = {str(rel): hashlib.sha256(data).hexdigest() for rel, data, _ in files}
-    files.append((Path("SOURCE_MANIFEST.json"),
-                  (json.dumps(manifest, indent=2) + "\n").encode(), False))
     archive = ROOT / "dist/latpre-artifact.zip"
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as stream:
         for rel, data, executable in files:
