@@ -1,11 +1,11 @@
 .PHONY: all build test bench params package clean
 all: bench
 build:
-	./run_all.sh --mode build
+	sh ./run_all.sh --mode build
 test:
-	./run_all.sh --mode test
+	sh ./run_all.sh --mode test
 bench:
-	./run_all.sh
+	sh ./run_all.sh
 params:
 	python3 params/verify.py
 package:

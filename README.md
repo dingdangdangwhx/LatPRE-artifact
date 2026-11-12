@@ -19,7 +19,7 @@ for tests.
 The first build downloads pinned OpenFHE and Go dependencies.
 
 ```sh
-./run_all.sh
+sh run_all.sh
 ```
 
 This builds and tests the code, then benchmarks LatPRE L/M/H, CiC25 single hop,
@@ -32,7 +32,7 @@ Outputs are saved under `results/local/run-.../`:
 - `hybrid-summary.csv`: email-forwarding results.
 - Component JSON/CSV files and logs: raw samples, parameters and test records.
 
-Use `./run_all.sh --help` for component selection and other options. Set `GO`
+Use `sh run_all.sh --help` for component selection and other options. Set `GO`
 or `CMAKE` if these tools are not on `PATH`.
 
 ## Parameters and measurements

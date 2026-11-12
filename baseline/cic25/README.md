@@ -12,15 +12,15 @@ The first build downloads OpenFHE and its pinned cereal submodule. It installs
 only below this directory; no system installation is performed.
 
 ```sh
-./configure.sh
-./run_bench.sh --samples 1000 --warmup 10 --output results/cic25
+sh configure.sh
+sh run_bench.sh --samples 1000 --warmup 10 --output results/cic25
 ```
 
-`configure.sh --cmake PATH --jobs 2` selects CMake and compilation parallelism.
+`sh configure.sh --cmake PATH --jobs 2` selects CMake and compilation parallelism.
 An explicitly selected existing, matching patched installation can be reused:
 
 ```sh
-./configure.sh --openfhe-dir /path/to/install/lib/OpenFHE
+sh configure.sh --openfhe-dir /path/to/install/lib/OpenFHE
 ```
 
 Benchmarks run sequentially with OpenMP disabled. JSON contains raw nanosecond
