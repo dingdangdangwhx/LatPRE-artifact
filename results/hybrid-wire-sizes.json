@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-11-12T14:20:58Z",
+  "go": "go1.27.3",
+  "results": [
+    {
+      "suite": "classical",
+      "sizes_bytes": {
+        "binary_header": 69,
+        "classical_proxy_adapter": 188,
+        "forwarded_email_overhead": 246,
+        "latpre_rekey_including_32B_seed": 0,
+        "matrix_seed": 0,
+        "proxy_package_binary": 1077,
+        "proxy_package_compact_json": 1642,
+        "public_package_compact_json": 765,
+        "raw_rekey_and_factor": 32,
+        "receiver_package_compact_json": 1168,
+        "source_classical_public": 521,
+        "source_email_overhead": 246,
+        "source_latpre_public": 0,
+        "target_classical_public": 299,
+        "target_latpre_public": 0
+      },
+      "authorization_round_trip": true,
+      "forwarding_round_trip": true
+    },
+    {
+      "suite": "hybrid-light",
+      "sizes_bytes": {
+        "binary_header": 69,
+        "classical_proxy_adapter": 188,
+        "forwarded_email_overhead": 2070,
+        "latpre_rekey_including_32B_seed": 53792,
+        "matrix_seed": 32,
+        "proxy_package_binary": 72821,
+        "proxy_package_compact_json": 97292,
+        "public_package_compact_json": 12753,
+        "raw_rekey_and_factor": 53824,
+        "receiver_package_compact_json": 10766,
+        "source_classical_public": 521,
+        "source_email_overhead": 4054,
+        "source_latpre_public": 8960,
+        "target_classical_public": 299,
+        "target_latpre_public": 8960
+      },
+      "authorization_round_trip": true,
+      "forwarding_round_trip": true
+    }
+  ],
+  "schema": "hybrid-mail-binary-authorization-v1",
+  "scope": "Same freshly generated keys and authorization in both encodings. No runtime benchmarks or secret material are exported. Source public and recipient secret packages retain their existing JSON format."
+}

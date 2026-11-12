@@ -1,0 +1,6 @@
+The lattice-estimator package is redistributed from upstream commit
+53da5982597709ba0fdf94ea37a84d822310fd84, without source changes.
+Upstream: https://github.com/malb/lattice-estimator
+The upstream README states that the estimator is licensed under LGPLv3+.
+Its source copyright and attribution notices are retained.
+COPYING.LESSER and COPYING contain the LGPLv3 and GPLv3 license texts.

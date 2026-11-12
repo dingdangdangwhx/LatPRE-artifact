@@ -1,0 +1,21 @@
+Median runtime (ms), 1000 measurements after 10 warmups
+Scheme         Setup     KeyGen   ReKeyGen        Enc        Dec      ReEnc
+LatPRE-L         0.1328     0.1662     0.5195     0.0616     0.0308     0.2374
+LatPRE-M         0.2081     0.2297     0.7410     0.0798     0.0362     0.2845
+LatPRE-H         0.2706     0.2525     0.7574     0.0907     0.0445     0.3718
+CiC25            1.0471     0.7026     0.6584     0.5287     0.0644     2.1163
+
+Communication (bytes; rekey includes its 32-byte seed)
+Scheme           PK          SK          RK        S CT        R CT
+LatPRE-L           8960       7168      53792       3808       1824
+LatPRE-M          13440      11200     100832       5792       2240
+LatPRE-H          18816      16128     112928       8320       2912
+CiC25             65536      33516     132077      66493      66533
+
+Hybrid email forwarding: see hybrid-summary.csv for all payloads and operations.
+classical      1 MB forward_prepared   0.1201 ms
+classical      1 MB open_receiver      0.3225 ms
+classical      1 MB seal               0.3184 ms
+hybrid-light   1 MB forward_prepared   0.4654 ms
+hybrid-light   1 MB open_receiver      0.4983 ms
+hybrid-light   1 MB seal               0.5783 ms

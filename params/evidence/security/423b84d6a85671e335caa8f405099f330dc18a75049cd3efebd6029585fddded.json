@@ -1,0 +1,119 @@
+{
+  "instance": {
+    "n": 1536,
+    "m": 1792,
+    "q": 4354066046977,
+    "distribution": {
+      "kind": "gaussian",
+      "width": "8.74"
+    },
+    "tag": "hint"
+  },
+  "canonical_instance": {
+    "n": 1536,
+    "m": 1792,
+    "q": 4354066046977,
+    "secret_distribution": {
+      "kind": "gaussian",
+      "width": "8.740000000000000000000000000000000000000000000000000000000000000000000000000",
+      "stddev": "3.486755530708521605195128563826497530479004436381528908000191751321550272360"
+    },
+    "error_distribution": {
+      "kind": "gaussian",
+      "width": "8.740000000000000000000000000000000000000000000000000000000000000000000000000",
+      "stddev": "3.486755530708521605195128563826497530479004436381528908000191751321550272360"
+    }
+  },
+  "mode": "classical",
+  "method": "full",
+  "reduction_cost_model": "MATZOV",
+  "shape": "gsa",
+  "estimator_commit": "53da5982597709ba0fdf94ea37a84d822310fd84",
+  "quantum_model": null,
+  "min_bits": 128.85146722433075,
+  "attacks": {
+    "arora-gb": {
+      "bits": "infinity",
+      "beta": null,
+      "details": "         rop:  \u22482^inf\n        dreg:  \u22482^inf\n         tag: arora-gb"
+    },
+    "bkw": {
+      "bits": 397.59031905433744,
+      "beta": null,
+      "details": "         rop: \u22482^397.6\n           m: \u22482^382.5\n         mem: \u22482^383.5\n           b:        9\n          t1:        0\n          t2:       51\n           \u2113:        8\n        #cod:     1453\n        #top:        0\n       #test:       85\n         tag: coded-bkw"
+    },
+    "usvp": {
+      "bits": 130.15406965990138,
+      "beta": 349,
+      "details": "         rop: \u22482^130.2\n         red: \u22482^130.2\n           \u03b4: 1.004373\n           \u03b2:      349\n           d:     3069\n         tag:     usvp"
+    },
+    "bdd": {
+      "bits": 128.85146722433075,
+      "beta": 343,
+      "details": "         rop: \u22482^128.9\n         red: \u22482^128.5\n         svp: \u22482^126.5\n           \u03b2:      343\n           \u03b7:      376\n           d:     3146\n         tag:      bdd"
+    },
+    "bdd_hybrid": {
+      "bits": 128.86626083669736,
+      "beta": 343,
+      "details": "         rop: \u22482^128.9\n         red: \u22482^128.6\n         svp: \u22482^126.5\n           \u03b2:      343\n           \u03b7:      376\n           \u03b6:        0\n         |S|:        1\n           d:     3182\n        prob:      1.0\n           \u21bb:        1\n         tag:   hybrid"
+    },
+    "bdd_mitm_hybrid": {
+      "bits": 243.6666006527405,
+      "beta": 349,
+      "details": "         rop: \u22482^243.7\n         red: \u22482^243.7\n         svp: \u22482^136.7\n           \u03b2:      349\n           \u03b7:        2\n           \u03b6:        0\n         |S|:        1\n           d:     3201\n        prob: \u22482^-111.2\n           \u21bb: \u22482^113.4\n         tag:   hybrid"
+    },
+    "dual": {
+      "bits": 132.27094246843458,
+      "beta": 353,
+      "details": "         rop: \u22482^132.3\n         mem: \u22482^84.5\n           m:     1677\n           \u03b2:      353\n           d:     3213\n           \u21bb:        1\n         tag:     dual"
+    },
+    "dual_hybrid": {
+      "bits": 131.83844807560288,
+      "beta": 351,
+      "details": "         rop: \u22482^131.8\n         red: \u22482^131.7\n       guess: \u22482^128.7\n           \u03b2:      351\n           p:        3\n           \u03b6:       10\n           t:        0\n          \u03b2':      364\n           N: \u22482^73.5\n           m:     1536"
+    }
+  },
+  "full_gate_passed": true,
+  "status": "ok",
+  "seconds": 62.91985466601909,
+  "peak_rss_native": 367984640,
+  "adapter_protocol": 3,
+  "adapter_sha256": "f6b1ca35638004042bbfab3737cc1b33b63c3bd27bcf2bcabd2c7cf159d77752",
+  "numeric_cbd_density_repair": {
+    "repair_id": "CBD_DENSITY_EXACT_QQ_GE512_V1",
+    "threshold": 512,
+    "density_formula": "1-QQ(binomial(2*eta,eta))/(ZZ(1)<<(2*eta))",
+    "audited_source_sha256": {
+      "estimator/nd.py": "d87fca7bb191a0fb29b24507897e00c8beba784da552b6b90a982c718fc1c459",
+      "estimator/lwe_primal.py": "f46e682a3eb0b7e3b175c326f96244caee5df6f07df78974cdb834e1d6f006d1",
+      "sage/integer.pyx": "389d16a96be79809268ce7f5118497e1d661624096397ab8d4bd5e03db387313",
+      "sage/real_double.pyx": "30b46067beb00356e560feaaaf3340ba92e2fb59fde62c4e5c6f96bd775c2150"
+    },
+    "runtime_module_sha256": "c6fc7283f55f6a55db30b7e08858f549edf822156541348129398c7575555cf2",
+    "fingerprint": "c3e8ecccfba11b7a8c80a1ec1dcee1d721622dc08ba861626543ec9bfa6a36f1",
+    "enabled": true,
+    "official_estimator_checkout_modified": false,
+    "scope": "Only CBD eta>=512 density arithmetic and affected cache/reuse identity",
+    "distribution_changed": false,
+    "attack_list_changed": false,
+    "complete_full_gate_still_required": true
+  },
+  "usvp_block_scan": {
+    "min_beta": 40,
+    "max_beta": 600,
+    "embedding_sample_limit": 3328,
+    "native_usvp": {
+      "bits": 130.15406965990138,
+      "beta": 349,
+      "details": "         rop: \u22482^130.2\n         red: \u22482^130.2\n           \u03b4: 1.004373\n           \u03b2:      349\n           d:     3069\n         tag:     usvp"
+    },
+    "model": "GSA cost_gsa with actual normalized LWE parameters and MATZOV cost",
+    "result": {
+      "bits": 130.15406965990138,
+      "beta": 349,
+      "details": "         rop: \u22482^130.2\n         red: \u22482^130.2\n           \u03b4: 1.004373\n           \u03b2:      349\n           d:     3069\n         tag:     usvp"
+    }
+  },
+  "job_id": "423b84d6a85671e335caa8f405099f330dc18a75049cd3efebd6029585fddded",
+  "wall_seconds": 66.87032400001772
+}

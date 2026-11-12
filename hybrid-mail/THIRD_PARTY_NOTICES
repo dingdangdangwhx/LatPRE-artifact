@@ -1,0 +1,16 @@
+Proton's classical forwarding implementation is imported as a pinned Go module:
+  github.com/ProtonMail/go-crypto v1.5.2-proton
+  commit 12a205f82df886522b8d1feb076b9562437ac10d
+  https://github.com/ProtonMail/go-crypto
+
+Its LICENSE and PATENTS files are included in licenses/. The official
+TestForwardingFull is invoked directly from that dependency by make proton-test;
+it has not been copied or altered.
+
+Other Go dependencies are pinned in go.mod and go.sum:
+  golang.org/x/crypto
+  golang.org/x/sys
+  github.com/cloudflare/circl
+Their upstream license and patent notices remain in the downloaded module
+sources. No dependency source tree, secret keys, generated mail, or build cache
+is included in this directory.

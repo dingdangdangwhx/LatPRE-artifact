@@ -1,0 +1,19 @@
+{
+  "origin": "LatPRE parameter-analysis helpers and the MIT-licensed mmCipher artifact arithmetic",
+  "license_file": "LICENSE-MIT",
+  "copy_changes": {
+    "cbd_rounding.c": "Local supporting-header includes only",
+    "crt_ntt.c": "Portable unsigned diagnostic formatting only",
+    "cbd_noise_bounds.py": "Portable imports and explicit certificate directory; validates mathematical fields instead of historical executable hashes",
+    "noise_bounds.py": "No formula changes"
+  },
+  "source_sha256": {
+    "cbd_noise_bounds.py": "4b459ae6db60c61957a00a98bc83e25576676c06936fb8e97f5721807abee71e",
+    "cbd_rounding.c": "0b363411eb875662a770caffce0ab89b1d2e1b1a84b062c01934e1bfc1585839",
+    "crt_ntt.c": "96cd03f5b06e115446790c7432511c9faef4be6a3d54a196f783c7061a0dc1d8",
+    "crt_ntt.h": "bf0160b265bd936e7bcf574abc06b577b496c5c171bf8c0ae82b35cca207fdf2",
+    "lbpre_dist.c": "2e352a93e4a7ddd1e6ae95d9adc849f5d3faad5005c52680ac53bec6c39cc1c8",
+    "lbpre_dist.h": "a8581605a11ae57871e8f41097880c8165297f3c42ea8f6d6d821774cce101fc",
+    "noise_bounds.py": "0fe44cf8421fcacbbe2579e33703d4722ee2f84befc5cf133c4a8253633ecb7f"
+  }
+}

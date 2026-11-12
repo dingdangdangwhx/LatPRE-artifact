@@ -1,0 +1,331 @@
+{
+  "samples_per_operation": 1000,
+  "warmup": 10,
+  "timing_unit": "milliseconds",
+  "size_unit": "bytes",
+  "runtime": [
+    {
+      "Scheme": "LatPRE-L",
+      "Setup": 0.132791,
+      "KeyGen": 0.166166,
+      "ReKeyGen": 0.5195205,
+      "Enc": 0.061583,
+      "DecTerminal": 0.030833,
+      "ReEnc": 0.237417,
+      "ReEnc_speedup": 8.913729850853139
+    },
+    {
+      "Scheme": "LatPRE-M",
+      "Setup": 0.208084,
+      "KeyGen": 0.229666,
+      "ReKeyGen": 0.740979,
+      "Enc": 0.079792,
+      "DecTerminal": 0.03625,
+      "ReEnc": 0.284541,
+      "ReEnc_speedup": 7.437490554963959
+    },
+    {
+      "Scheme": "LatPRE-H",
+      "Setup": 0.270625,
+      "KeyGen": 0.252542,
+      "ReKeyGen": 0.757375,
+      "Enc": 0.09075,
+      "DecTerminal": 0.0445,
+      "ReEnc": 0.37175,
+      "ReEnc_speedup": 5.69272629455279
+    },
+    {
+      "Scheme": "CiC25",
+      "Setup": 1.047084,
+      "KeyGen": 0.7025835,
+      "ReKeyGen": 0.658375,
+      "Enc": 0.5286875,
+      "DecTerminal": 0.064417,
+      "ReEnc": 2.116271,
+      "ReEnc_speedup": 1.0
+    }
+  ],
+  "communication": [
+    {
+      "Scheme": "LatPRE-L",
+      "PK_B": 8960,
+      "SK_B": 7168,
+      "RK_B": 53792,
+      "S_CT_B": 3808,
+      "R_CT_B": 1824
+    },
+    {
+      "Scheme": "LatPRE-M",
+      "PK_B": 13440,
+      "SK_B": 11200,
+      "RK_B": 100832,
+      "S_CT_B": 5792,
+      "R_CT_B": 2240
+    },
+    {
+      "Scheme": "LatPRE-H",
+      "PK_B": 18816,
+      "SK_B": 16128,
+      "RK_B": 112928,
+      "S_CT_B": 8320,
+      "R_CT_B": 2912
+    },
+    {
+      "Scheme": "CiC25",
+      "PK_B": 65536,
+      "SK_B": 33516,
+      "RK_B": 132077,
+      "S_CT_B": 66493,
+      "R_CT_B": 66533
+    }
+  ],
+  "hybrid": [
+    {
+      "Suite": "classical",
+      "Payload_B": 0,
+      "Operation": "authorize_including_target_keygen",
+      "Median_ms": 0.261583,
+      "Source_B": 0,
+      "Forwarded_B": 0
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 0,
+      "Operation": "proxy_prepare",
+      "Median_ms": 0.00525,
+      "Source_B": 0,
+      "Forwarded_B": 0
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 0,
+      "Operation": "source_setup_keygen",
+      "Median_ms": 0.1273545,
+      "Source_B": 0,
+      "Forwarded_B": 0
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 10240,
+      "Operation": "forward_prepared",
+      "Median_ms": 0.078584,
+      "Source_B": 10486,
+      "Forwarded_B": 10486
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 10240,
+      "Operation": "open_receiver",
+      "Median_ms": 0.082584,
+      "Source_B": 10486,
+      "Forwarded_B": 10486
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 10240,
+      "Operation": "open_source",
+      "Median_ms": 0.083833,
+      "Source_B": 10486,
+      "Forwarded_B": 10486
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 10240,
+      "Operation": "seal",
+      "Median_ms": 0.1452085,
+      "Source_B": 10486,
+      "Forwarded_B": 10486
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 102400,
+      "Operation": "forward_prepared",
+      "Median_ms": 0.092875,
+      "Source_B": 102646,
+      "Forwarded_B": 102646
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 102400,
+      "Operation": "open_receiver",
+      "Median_ms": 0.1115625,
+      "Source_B": 102646,
+      "Forwarded_B": 102646
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 102400,
+      "Operation": "open_source",
+      "Median_ms": 0.112354,
+      "Source_B": 102646,
+      "Forwarded_B": 102646
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 102400,
+      "Operation": "seal",
+      "Median_ms": 0.1840835,
+      "Source_B": 102646,
+      "Forwarded_B": 102646
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 1048576,
+      "Operation": "forward_prepared",
+      "Median_ms": 0.120083,
+      "Source_B": 1048822,
+      "Forwarded_B": 1048822
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 1048576,
+      "Operation": "open_receiver",
+      "Median_ms": 0.3225005,
+      "Source_B": 1048822,
+      "Forwarded_B": 1048822
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 1048576,
+      "Operation": "open_source",
+      "Median_ms": 0.241917,
+      "Source_B": 1048822,
+      "Forwarded_B": 1048822
+    },
+    {
+      "Suite": "classical",
+      "Payload_B": 1048576,
+      "Operation": "seal",
+      "Median_ms": 0.318417,
+      "Source_B": 1048822,
+      "Forwarded_B": 1048822
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 0,
+      "Operation": "authorize_including_target_keygen",
+      "Median_ms": 1.143479,
+      "Source_B": 0,
+      "Forwarded_B": 0
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 0,
+      "Operation": "proxy_prepare",
+      "Median_ms": 0.7409375,
+      "Source_B": 0,
+      "Forwarded_B": 0
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 0,
+      "Operation": "source_setup_keygen",
+      "Median_ms": 0.4701045,
+      "Source_B": 0,
+      "Forwarded_B": 0
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 10240,
+      "Operation": "forward_prepared",
+      "Median_ms": 0.411,
+      "Source_B": 14294,
+      "Forwarded_B": 12310
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 10240,
+      "Operation": "open_receiver",
+      "Median_ms": 0.281583,
+      "Source_B": 14294,
+      "Forwarded_B": 12310
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 10240,
+      "Operation": "open_source",
+      "Median_ms": 0.294792,
+      "Source_B": 14294,
+      "Forwarded_B": 12310
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 10240,
+      "Operation": "seal",
+      "Median_ms": 0.408208,
+      "Source_B": 14294,
+      "Forwarded_B": 12310
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 102400,
+      "Operation": "forward_prepared",
+      "Median_ms": 0.4285625,
+      "Source_B": 106454,
+      "Forwarded_B": 104470
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 102400,
+      "Operation": "open_receiver",
+      "Median_ms": 0.3029795,
+      "Source_B": 106454,
+      "Forwarded_B": 104470
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 102400,
+      "Operation": "open_source",
+      "Median_ms": 0.319854,
+      "Source_B": 106454,
+      "Forwarded_B": 104470
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 102400,
+      "Operation": "seal",
+      "Median_ms": 0.426896,
+      "Source_B": 106454,
+      "Forwarded_B": 104470
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 1048576,
+      "Operation": "forward_prepared",
+      "Median_ms": 0.465416,
+      "Source_B": 1052630,
+      "Forwarded_B": 1050646
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 1048576,
+      "Operation": "open_receiver",
+      "Median_ms": 0.49825,
+      "Source_B": 1052630,
+      "Forwarded_B": 1050646
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 1048576,
+      "Operation": "open_source",
+      "Median_ms": 0.455166,
+      "Source_B": 1052630,
+      "Forwarded_B": 1050646
+    },
+    {
+      "Suite": "hybrid-light",
+      "Payload_B": 1048576,
+      "Operation": "seal",
+      "Median_ms": 0.57825,
+      "Source_B": 1052630,
+      "Forwarded_B": 1050646
+    }
+  ],
+  "rekey_seed_bytes": 32,
+  "conventions": {
+    "latpre_rekeygen": "wire rekey generation; NTT preparation separate",
+    "latpre_reenc": "prepared rekey, mask recomputed, no pad memoization",
+    "dec": "re-encrypted ciphertext decryption",
+    "cic_public_key": "native b payload; raw JSON also retains serialized public key"
+  }
+}

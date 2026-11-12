@@ -1,0 +1,169 @@
+{
+  "baseline": "local-single-hop-hra-q54-p55",
+  "samples": 1000,
+  "warmup": 10,
+  "statistic": "median",
+  "configuration": {
+    "mode": "hra",
+    "key_switch": "hybrid",
+    "requested_ring_dimension": 4096,
+    "configured_hops": 1,
+    "measured_hop": 1,
+    "chain_execution": "single edge at full modulus",
+    "requested_eval_add_count": 0,
+    "requested_key_switch_count": 0,
+    "source_public_key_enc0": true,
+    "plaintext_modulus": 2,
+    "message_bits": 256,
+    "nu": 48,
+    "tau_log2": 18,
+    "samples": 1000,
+    "warmup": 10,
+    "hra_budget_applied": true,
+    "requested_digit_size": 0,
+    "requested_large_digits": 1,
+    "requested_first_mod_size": 0,
+    "secret_distribution": "UNIFORM_TERNARY",
+    "security_level": "HEStd_128_classic"
+  },
+  "actual_parameters": {
+    "P": {
+      "limbs": 1,
+      "product_bits": 55,
+      "log2_product": 54.99999999998754,
+      "primes_decimal": [
+        "36028797018652673"
+      ]
+    },
+    "PK_basis": {
+      "limbs": 2,
+      "product_bits": 109,
+      "log2_product": 108.99999999997377,
+      "primes_decimal": [
+        "18014398509309953",
+        "36028797018652673"
+      ]
+    },
+    "Q": {
+      "limbs": 1,
+      "product_bits": 54,
+      "log2_product": 53.99999999998622,
+      "primes_decimal": [
+        "18014398509309953"
+      ]
+    },
+    "QP": {
+      "limbs": 2,
+      "product_bits": 109,
+      "log2_product": 108.99999999997377,
+      "primes_decimal": [
+        "18014398509309953",
+        "36028797018652673"
+      ]
+    },
+    "actual_public_key_basis": {
+      "limbs": 2,
+      "product_bits": 109,
+      "log2_product": 108.99999999997377,
+      "primes_decimal": [
+        "18014398509309953",
+        "36028797018652673"
+      ]
+    },
+    "actual_public_key_polynomials": 2,
+    "actual_secret_key_basis": {
+      "limbs": 1,
+      "product_bits": 54,
+      "log2_product": 53.99999999998622,
+      "primes_decimal": [
+        "18014398509309953"
+      ]
+    },
+    "adversarial_queries": 262144,
+    "assurance_measure": 36,
+    "aux_bits": 55,
+    "digit_size_actual": 0,
+    "error_sampler_stddev": 3.200000047683716,
+    "error_stddev": 3.200000047683716,
+    "flooding_sampler_stddev": 332143987615824.5,
+    "flooding_stddev": 332143987615824.5,
+    "num_large_digits_actual": 1,
+    "re_ciphertext": {
+      "components": 2,
+      "level": 0,
+      "basis": {
+        "limbs": 1,
+        "product_bits": 54,
+        "log2_product": 53.99999999998622,
+        "primes_decimal": [
+          "18014398509309953"
+        ]
+      }
+    },
+    "reduced_re_ciphertext": null,
+    "rekey_A_polynomials": 1,
+    "rekey_B_polynomials": 1,
+    "rekey_basis": {
+      "limbs": 2,
+      "product_bits": 109,
+      "log2_product": 108.99999999997377,
+      "primes_decimal": [
+        "18014398509309953",
+        "36028797018652673"
+      ]
+    },
+    "ring_dimension": 4096,
+    "secret_distribution_enum": 1,
+    "security_level_enum": 0,
+    "source_ciphertext": {
+      "components": 2,
+      "level": 0,
+      "basis": {
+        "limbs": 1,
+        "product_bits": 54,
+        "log2_product": 53.99999999998622,
+        "primes_decimal": [
+          "18014398509309953"
+        ]
+      }
+    },
+    "statistical_security": 48
+  },
+  "sizes_original_serialization_bytes": {
+    "context": {
+      "standalone": 479,
+      "incremental_after_context": null
+    },
+    "public_key": {
+      "standalone": 132003,
+      "incremental_after_context": 131532
+    },
+    "re_ciphertext": {
+      "standalone": 66533,
+      "incremental_after_context": 66062
+    },
+    "rekey": {
+      "standalone": 132077,
+      "incremental_after_context": 131606
+    },
+    "secret_key": {
+      "standalone": 33516,
+      "incremental_after_context": 33045
+    },
+    "source_ciphertext": {
+      "standalone": 66493,
+      "incremental_after_context": 66022
+    }
+  },
+  "public_key_b_native_payload_bytes": 65536,
+  "median_ns": {
+    "Setup": 1088374.5,
+    "KeyGen": 623250,
+    "Enc": 541563,
+    "DecSource": 66375,
+    "ReKeyGen": 676937.5,
+    "ReEnc": 2148124.5,
+    "DecTerminal": 66292
+  },
+  "note": "Published paper values are not substituted for local benchmark results. Full serialized PK and b-only payload are distinct."
+}

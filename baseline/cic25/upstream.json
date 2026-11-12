@@ -1,0 +1,21 @@
+{
+  "openfhe": {
+    "url": "https://github.com/openfheorg/openfhe-development.git",
+    "commit": "13bf46f683483da1fe77f591b98035fa455740c6",
+    "tag": "v1.2.0"
+  },
+  "cereal": {
+    "commit": "984e3f194862b17916536b5fade40cba6e47a6fe",
+    "submodule": "third-party/cereal"
+  },
+  "authors_network_artifact": {
+    "url": "https://github.com/openfheorg/openfhe-network-examples",
+    "commit": "1cee5bfe308b48a5e9e545786058e75b7058726f",
+    "role": "Provenance; network/gRPC code is not required for this single-threaded local benchmark"
+  },
+  "patch_sha256": "847f46ea7c3fa3bc8cf38b9395a981cdcf86cafa392066e60923cf0fa894e7a1",
+  "patched_files_sha256": {
+    "src/core/include/math/discretegaussiangenerator-impl.h": "5efae8b2f058140d60b4b547f53a1d340d33417feaa79f53ed41cfc948d88606",
+    "src/pke/lib/scheme/bgvrns/bgvrns-parametergeneration.cpp": "e0c339210027411afd24a715075b04258352e8496239b2cd3f9ac0723f3374e6"
+  }
+}
