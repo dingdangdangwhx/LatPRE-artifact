@@ -2,7 +2,7 @@
 from decimal import Decimal as D, localcontext, ROUND_FLOOR, ROUND_CEILING
 PRECISION=80
 
-def ln_interval(x: Decimal) -> tuple[Decimal, Decimal]:
+def ln_interval(x: D) -> tuple[D, D]:
     """Enclose ln(x) using Decimal's correctly rounded logarithm."""
     value = x.ln()
     return value.next_minus(), value.next_plus()

@@ -19,6 +19,7 @@ static const lbpre_params sets[] = {
       .sigma_source="89.6482256861267567083977105145062742480738722735201467193191882327065069167424428767797962828029623532112306703808829541065027441352332188617444677679", .sigma_terminal=NULL,
       .sigma_pad="151420265848.961978123433377810309429242308760008072224629246857607467215302982943154462170301732166335710552580833319635835674053817462392573638833119" },
 };
+#include "extended_params.inc"
 const lbpre_params *lbpre_params_get(unsigned logQ) {
     for (size_t i=0;i<sizeof(sets)/sizeof(sets[0]);++i) if(sets[i].logQ==logQ) return &sets[i];
     return NULL;
@@ -26,10 +27,14 @@ const lbpre_params *lbpre_params_get(unsigned logQ) {
 const lbpre_params *lbpre_params_named(const char *name) {
     if (!name) return NULL;
     for (size_t i=0;i<sizeof(sets)/sizeof(sets[0]);++i) if(strcmp(sets[i].name,name)==0) return &sets[i];
+    for (size_t i=0;i<sizeof(extended_sets)/sizeof(extended_sets[0]);++i) if(strcmp(extended_sets[i].name,name)==0) return &extended_sets[i];
     return NULL;
 }
 const char *lbpre_parameter_profile_id(void) { return "LATPRE-CLASSICAL128-LMH-SELECTION-v1"; }
 const char *lbpre_parameter_source_sha256(void) { return "c5d401fd996652e386be274d8921b5f3e6c94d8be08543cf61af5f378b3cd509"; }
+const char *lbpre_parameter_context_sha256(const lbpre_params *p) {
+    return p && p->name[0]=='E' ? LBPRE_EXTRA_SOURCE_SHA256 : lbpre_parameter_source_sha256();
+}
 size_t lbpre_public_key_bytes(const lbpre_params *p) { return p ? 2u*p->ell*LBPRE_D*p->q_bits/8u : 0; }
 size_t lbpre_secret_key_bytes(const lbpre_params *p) { return p ? 2u*p->k*LBPRE_D*p->q_bits/8u : 0; }
 size_t lbpre_source_bytes(const lbpre_params *p) { return p ? LBPRE_D*(p->k*p->q_bits+p->source_v_bits)/8u : 0; }

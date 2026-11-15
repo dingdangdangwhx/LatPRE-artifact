@@ -70,7 +70,7 @@ static uint64_t residue(int64_t x, uint64_t q)
 static void invalid_inputs_and_environment(void)
 {
     static const char *bad[] = {NULL,"","0","-1","nan","inf","NaN","1x","1e100",
-        "1099511627777","0x1p2"," 2","2 ","1e","2,0","1e-9999","1e-200"};
+        "18014398509481988","0x1p2"," 2","2 ","1e","2,0","1e-9999","1e-200"};
     lbpre_gaussian *g;
     size_t i;
     int original = fegetround();
@@ -248,6 +248,29 @@ static void wide_pad_statistics(void)
     lbpre_gaussian_free(g); lbpre_rng_free(rng);
 }
 
+static void supplementary_wide_pad(void)
+{
+    const size_t count=20000;
+    lbpre_gaussian *g=lbpre_gaussian_new("16000000000000000");
+    lbpre_rng *rng=new_rng(117);
+    long double sum=0,squares=0;
+    size_t odd=0,i;
+    assert(g && rng);
+    for(i=0;i<count;i++) {
+        int64_t sample=lbpre_gaussian_sample(g,rng);
+        long double z=(long double)sample/(16000000000000000.0L/2.5066282746310005024L);
+        assert(sample!=INT64_MIN);
+        odd+=((uint64_t)sample&1u)!=0;
+        sum+=z;squares+=z*z;
+    }
+    /* Detect mantissa-grid/parity collapse and gross width/tail regressions;
+     * these checks do not certify a statistical-distance bound. */
+    assert(odd>9500 && odd<10500);
+    assert(fabsl(sum/count)<0.04L);
+    assert(squares/count>0.94L && squares/count<1.06L);
+    lbpre_gaussian_free(g);lbpre_rng_free(rng);
+}
+
 int main(void)
 {
     assert(strcmp(lbpre_gaussian_backend(),"openfhe-cdf-karney-v1") == 0);
@@ -261,6 +284,7 @@ int main(void)
     small_discrete_pmf();
     all_profile_widths_and_wide_integers();
     wide_pad_statistics();
+    supplementary_wide_pad();
     puts("OpenFHE sampler tests: OK (independent CDF/Karney KATs, std300 boundary, RNG consumption/history, six L/M/H profile widths, 100000 small-PMF +100000 wide-pad samples; no certified error bound)");
     return 0;
 }

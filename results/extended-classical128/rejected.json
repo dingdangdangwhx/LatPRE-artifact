@@ -1,0 +1,19 @@
+[
+  {
+    "instance": {
+      "n": 1280,
+      "m": 1536,
+      "q": 2126005249,
+      "distribution": {
+        "kind": "cbd",
+        "eta": 1
+      },
+      "tag": "terminal"
+    },
+    "min_bits": 127.19929732270963,
+    "target_bits": 128,
+    "reason": "Rejected by full MATZOV/GSA security check",
+    "record": "security/940bb6aaa751ad221ffead3d35ad01493ae031d640d1d35e489ddfdd0f3c1f14.json",
+    "sha256": "c84ae7c9fb6b15de53842c64cf5fc4837e774cc4438146673a9c365036f11615"
+  }
+]

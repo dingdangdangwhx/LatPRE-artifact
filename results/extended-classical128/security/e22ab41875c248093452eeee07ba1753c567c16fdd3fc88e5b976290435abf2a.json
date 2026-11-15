@@ -1,0 +1,79 @@
+{
+  "instance": {
+    "n": 1536,
+    "m": 1792,
+    "q": 272129121793,
+    "distribution": {
+      "kind": "cbd",
+      "eta": 4
+    },
+    "tag": "terminal"
+  },
+  "mode": "classical",
+  "method": "full",
+  "status": "ok",
+  "reduction_cost_model": "MATZOV",
+  "shape": "gsa",
+  "estimator_commit": "53da5982597709ba0fdf94ea37a84d822310fd84",
+  "quantum_model": null,
+  "attacks": {
+    "arora-gb": {
+      "bits": "infinity",
+      "beta": null,
+      "details": "         rop:  \u22482^inf"
+    },
+    "bkw": {
+      "bits": 324.26737334219547,
+      "beta": null,
+      "details": "         rop: \u22482^324.3\n           m: \u22482^308.9\n         mem: \u22482^309.9\n           b:        8\n          t1:        3\n          t2:       61\n           \u2113:        7\n        #cod:     1422\n        #top:        0\n       #test:       94\n         tag: coded-bkw"
+    },
+    "usvp": {
+      "bits": 135.36566570065915,
+      "beta": 368,
+      "details": "         rop: \u22482^135.4\n         red: \u22482^135.4\n           \u03b4: 1.004218\n           \u03b2:      368\n           d:     2981\n         tag:     usvp"
+    },
+    "bdd": {
+      "bits": 133.97467746277033,
+      "beta": 362,
+      "details": "         rop: \u22482^134.0\n         red: \u22482^133.7\n         svp: \u22482^131.2\n           \u03b2:      362\n           \u03b7:      393\n           d:     3049\n         tag:      bdd"
+    },
+    "bdd_hybrid": {
+      "bits": 133.99012586870367,
+      "beta": 362,
+      "details": "         rop: \u22482^134.0\n         red: \u22482^133.8\n         svp: \u22482^131.2\n           \u03b2:      362\n           \u03b7:      393\n           \u03b6:        0\n         |S|:        1\n           d:     3083\n        prob:      1.0\n           \u21bb:        1\n         tag:   hybrid"
+    },
+    "bdd_mitm_hybrid": {
+      "bits": 254.563876241031,
+      "beta": 369,
+      "details": "         rop: \u22482^254.6\n         red: \u22482^254.6\n         svp: \u22482^142.1\n           \u03b2:      369\n           \u03b7:        2\n           \u03b6:        0\n         |S|:        1\n           d:     3103\n        prob: \u22482^-116.7\n           \u21bb: \u22482^118.9\n         tag:   hybrid"
+    },
+    "dual": {
+      "bits": 137.82613194287805,
+      "beta": 373,
+      "details": "         rop: \u22482^137.8\n         mem: \u22482^88.5\n           m:     1579\n           \u03b2:      373\n           d:     3115\n           \u21bb:        1\n         tag:     dual"
+    },
+    "dual_hybrid": {
+      "bits": 134.65708640008287,
+      "beta": 362,
+      "details": "         rop: \u22482^134.7\n         red: \u22482^134.7\n       guess: \u22482^125.5\n           \u03b2:      362\n           p:        6\n           \u03b6:       10\n           t:       30\n          \u03b2':      374\n           N: \u22482^76.4\n           m:     1536"
+    }
+  },
+  "min_bits": 133.97467746277033,
+  "full_gate_passed": true,
+  "seconds": 84.41634633400099,
+  "usvp_block_scan": {
+    "min_beta": 40,
+    "max_beta": 600,
+    "embedding_sample_limit": 3328,
+    "native_usvp": {
+      "bits": 135.36566570065915,
+      "beta": 368,
+      "details": "         rop: \u22482^135.4\n         red: \u22482^135.4\n           \u03b4: 1.004218\n           \u03b2:      368\n           d:     2981\n         tag:     usvp"
+    },
+    "result": {
+      "bits": 135.36566570065915,
+      "beta": 368,
+      "details": "         rop: \u22482^135.4\n         red: \u22482^135.4\n           \u03b4: 1.004218\n           \u03b2:      368\n           d:     2981\n         tag:     usvp"
+    }
+  }
+}

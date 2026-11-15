@@ -10,6 +10,7 @@ Completed sequential run on Darwin arm64: 1000 measurements per operation after 
 | `hybrid.json`, `hybrid-summary.csv` | Classical/hybrid forwarding measurements for 10 KB, 100 KB, and 1 MB payloads |
 | `hybrid-wire-sizes.json` | Key, authorization, and envelope sizes for the email prototype |
 | `manifest.json`, `parameters.json` | Run status and frozen-parameter verification |
+| `extended-classical128/` | Supplementary Q/M candidates, verified parameters, exact sizes and implementation measurements |
 
 Paths were normalized for publication; numeric measurements were not modified. Build logs and demo secret keys are excluded. New runs are saved separately under `local/`.
 

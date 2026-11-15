@@ -1,0 +1,1425 @@
+{
+  "schema": "latpre-supplementary-profiles-v1",
+  "profile_id": "LATPRE-CLASSICAL128-SUPPLEMENT-v1",
+  "parameter_sha256": "325e874327fa92a0f593323c6ab2179e16fd643fffe5e3185bc02acab4b703b5",
+  "selected_sha256": "f4e5f965c999f790c3d521590e5dfd39f03298a8c376064ed37369fa34642b85",
+  "profiles": {
+    "E20_10": {
+      "runtime": {
+        "name": "L",
+        "report_id": "e76ddf4335cd2dfa159f7ef2",
+        "logQ": 20,
+        "logM": 10,
+        "k": 4,
+        "ell": 5,
+        "q_bits": 28,
+        "base": 643,
+        "length": 3,
+        "source_v_bits": 7,
+        "re_u_bits": 13,
+        "re_v_bits": 5,
+        "q": 265753601,
+        "source_eta": 1,
+        "internal_eta": 1,
+        "terminal_eta": 12,
+        "source_std": "14.753136145925044",
+        "pad_std": "1951876.069544714",
+        "sigma_source": "36.9806282028563414953809458699387403994907945654508153677741598828917704327530799324658640797543936283325820965844996697370179803060584522071750295435",
+        "sigma_pad": "4892627.74449640520017965975541654958757095141274329683922069449816616972796331447640801400348618175794966952906567185793512466187110478556401237892451",
+        "sizes_bytes": {
+          "rekey_body_bytes": 53760,
+          "rekey_seed_bytes": 32,
+          "public_key_bytes": 8960,
+          "secret_key_bytes": 7168,
+          "rekey_bytes": 53792,
+          "source_ct_bytes": 3808,
+          "reenc_ct_bytes": 1824
+        }
+      },
+      "candidate": {
+        "profile": "L",
+        "degree": 256,
+        "Q_log2": 20,
+        "M_log2": 10,
+        "Q": 1048576,
+        "M": 1024,
+        "k": 4,
+        "ell": 5,
+        "q": 265753601,
+        "q_bits": 28,
+        "sigma_H": "8.74",
+        "source_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "internal_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "terminal_distribution": {
+          "kind": "cbd",
+          "eta": 12
+        },
+        "gadget_base": 643,
+        "gadget_length": 3,
+        "source_v_bits": 7,
+        "re_u_bits": 13,
+        "re_v_bits": 5,
+        "source_u_bits": 28,
+        "source_std": "14.753136145925044",
+        "pad_std": "1951876.069544714",
+        "B_original": 136749246,
+        "B_QM": 140031227904,
+        "correctness_certificate": {
+          "bank": {
+            "original_bank": {
+              "method": "spherical_average",
+              "Q": 1048576,
+              "p": 9,
+              "d": 256,
+              "tau2": "1/2",
+              "bank_bad_event_bits": 160,
+              "B": 136749246,
+              "norm": 11693.98332477005,
+              "shape_factor": 1068353.4797260226,
+              "shape_excess": 19777.47972602247,
+              "n": 1048576,
+              "m": 9,
+              "tilt_numerator": 333997265767858176,
+              "tilt_denominator": 18446744073709551616,
+              "certificate": {
+                "passed": true,
+                "log2_bad_probability_upper": "-160.0001265780792163195711846539749608692242582021874350983131835693756616368",
+                "arithmetic": "256-bit outward MPFI intervals",
+                "scope": "one honest iid coefficient bank"
+              }
+            },
+            "M": 1024,
+            "joint_B_required": 140031227904,
+            "joint_B_selected": 140031227904,
+            "bad_bank_bits": 160,
+            "relation": "Gamma(L_all)^*Gamma(L_all)=M*Gamma(L)^*Gamma(L)",
+            "probability_loss": "One original-bank bad event, not M events",
+            "passed": true
+          },
+          "passed": true
+        }
+      },
+      "security": {
+        "hint": {
+          "record": "security/7d94d53a181c9f9bc7c68d16998c19ddfb35002a19c01f689ed5fa810fbb4698.json",
+          "sha256": "4947ea484108279ded940da61e3a18a0c173674fde142c42d72515076102cfce",
+          "min_bits": 133.25487601994183
+        },
+        "terminal": {
+          "record": "security/8857d031f6bea95a40ab97e92d79155444c8250fae9dcc3371e0f112085adf8e.json",
+          "sha256": "3f7e349b98c987581df33497e77a11159da0439ce3910b26743fc99c3999aa46",
+          "min_bits": 128.10130225530273
+        },
+        "source": {
+          "record": "security/5fcd414f31d48cd392a05af756a5dd140926a634535cd130fc09eec85a7c3697.json",
+          "sha256": "9ecf6da1024dcf3ad1f0e3490534ff45d9cc4f73e42749f38ddec25178c815a6",
+          "min_bits": 139.94112017724063
+        },
+        "internal": {
+          "record": "security/5fcd414f31d48cd392a05af756a5dd140926a634535cd130fc09eec85a7c3697.json",
+          "sha256": "9ecf6da1024dcf3ad1f0e3490534ff45d9cc4f73e42749f38ddec25178c815a6",
+          "min_bits": 139.94112017724063
+        }
+      },
+      "dfr": {
+        "passed": true,
+        "source_log2_upper": "-3.43117839840907326878174525143150889690080440634627759836749127909640467867613197689167241751721178729352284488014495498202627326881975149281666228084727e6",
+        "reenc_log2_upper": "-129.467406464808712649991329662267685237107811562546319003745326990178152812897510863472886782678076805894737662756389031433131334216812294304225459390797",
+        "source_analytic_log2_upper": "-3.43117839840907326878174525143150889690080440634627759836749127909640467867613197689167241751721178729352284488014495498202627326881975149281666228084727e6",
+        "round_log2_upper": -130,
+        "theta_log2_upper": "-1.08494758913120350617589718151599057933297020462378933556883594423211270190427321221605351305535822122474151497478380392587117603326333465710626243967759e14",
+        "joint_log2_upper": "-128.709264628040624058790103141962128596274405200175627281940587279604792864779997477138716464083839873967487577608127304785632081714182823930048211928665",
+        "source_threshold_lower": "6.54002990000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e7",
+        "reenc_threshold_lower": "4.38448602198894777360124159522816587416330280641331506109298579924870359241783126819999999999999999999999999999999999999999999999999999999999999999999999e7",
+        "source_tilt": "0.03636817703263721400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?",
+        "reenc_tilt": "2.911499415687138600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?e-6",
+        "budgets": {
+          "round_bits": 130,
+          "failure_bits": 128,
+          "source_bits": 256,
+          "theta_bits": 250,
+          "main_bits": 128.41503749937883
+        },
+        "rounding": {
+          "source_v": 1038100,
+          "re_u": 16220,
+          "re_v": 4152400,
+          "terminal_multiplier_upper": "1072.93703946427387570823576126500254367243970011509552337053896470486831540207690000000000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "precision": 512,
+        "exact_pmf": false,
+        "full_PRE_PMF": false,
+        "shared_terminal_dependency_preserved": true,
+        "rounding_backend": "actual_C_CBD_stoploss_PMF",
+        "source_backend": "analytic_MGF",
+        "source_C_evaluated": false,
+        "source_bound_selected": "analytic_MGF",
+        "method": "Dependency-aware spectral MGF/CDF plus certified component bounds",
+        "scope": "Fixed honest pair; one Enc plus one ReEnc; ideal sampling; source u exact"
+      },
+      "rounding_record": "evidence/rounding/eta12_k4_d256_rb130.json",
+      "original_parameter_snapshot_sha256": "47fc26e1e2bd2c0b8a9b087c73371487b5d019cb32725b7223fb5d24d387b0cb",
+      "id": "frozen-L",
+      "status": "verified-existing-frozen",
+      "verified_spectral": {
+        "profile": "L",
+        "Q": 1048576,
+        "M": 1024,
+        "p": 9,
+        "B_single": 136749246,
+        "B_QM": 140031227904,
+        "tilt_numerator": 333997265767858176,
+        "tilt_denominator": 18446744073709551616,
+        "log2_spectral_failure_upper": "-160.00012657807921631957118465397496086922425820218743509831318356937566163811026",
+        "delta_spec": "2^-160",
+        "epsilon_g": "2^-150",
+        "delta": "0.9",
+        "sigma_H": "8.74",
+        "sigma_source_exact_runtime": "36.9806282028563414953809458699387403994907945654508153677741598828917704327530799324658640797543936283325820965844996697370179803060584522071750295435",
+        "sigma_pad_exact_runtime": "4892627.74449640520017965975541654958757095141274329683922069449816616972796331447640801400348618175794966952906567185793512466187110478556401237892451",
+        "posterior_parameter_interval": [
+          "151.95214372303676230667446493247950080458159970147887238762357448099805216405020",
+          "151.95214372303676230667446493247950080458159970147887238762357448099805216405023"
+        ],
+        "current_theorem_required_parameter_interval": [
+          "147.82183489731392680710162341087332299077274045156424269233561749319902837005279",
+          "147.82183489731392680710162341087332299077274045156424269233561749319902845553158"
+        ],
+        "current_theorem_sampling_margin_lower": "4.13030882572283549957284152160617781380885924991462969528795698779902370851862",
+        "current_theorem_convolution_margin_lower": "0.403141270596277093968484729000902950366252178639516599110077314395988714669173",
+        "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+        "verified": true
+      }
+    },
+    "E20_15": {
+      "runtime": {
+        "name": "E20_15",
+        "logQ": 20,
+        "logM": 15,
+        "k": 5,
+        "ell": 6,
+        "q_bits": 31,
+        "base": 1287,
+        "length": 3,
+        "q": 2126005249,
+        "source_eta": 1,
+        "internal_eta": 1,
+        "terminal_eta": 2,
+        "source_std": "24.257372300935035",
+        "pad_std": "10485636.815160932",
+        "sigma_terminal": null,
+        "source_v_bits": 4,
+        "re_u_bits": 11,
+        "re_v_bits": 4,
+        "sigma_source": "60.80421527777460947735586545785338494742146756628419067353355118577255042998634452616933243845747621405123459277569680476581089469854390559011630164526094441959",
+        "sigma_pad": "26283593.71839414610990716107966843036237626075421334515787369197590310443014675101250893437476604281482371928063005309034445214486952022297061260913212331183804",
+        "sizes_bytes": {
+          "public_key_bytes": 11904,
+          "secret_key_bytes": 9920,
+          "source_ct_bytes": 5088,
+          "reenc_ct_bytes": 1888,
+          "rekey_body_bytes": 89280,
+          "rekey_seed_bytes": 32,
+          "rekey_bytes": 89312
+        }
+      },
+      "candidate": {
+        "profile": "E20_15",
+        "degree": 256,
+        "Q_log2": 20,
+        "M_log2": 15,
+        "Q": 1048576,
+        "M": 32768,
+        "k": 5,
+        "ell": 6,
+        "q": 2126005249,
+        "q_bits": 31,
+        "sigma_H": "8.74",
+        "B_original": 136855320,
+        "B_QM": 4484475125760,
+        "source_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "internal_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "terminal_distribution": {
+          "kind": "cbd",
+          "eta": 2
+        },
+        "gadget_base": 1287,
+        "gadget_length": 3,
+        "source_v_bits": 4,
+        "re_u_bits": 11,
+        "re_v_bits": 4,
+        "source_std": "24.257372300935035",
+        "pad_std": "10485636.815160932",
+        "correctness_certificate": {
+          "bank": {
+            "original_bank": {
+              "method": "spherical_average",
+              "Q": 1048576,
+              "p": 11,
+              "d": 256,
+              "tau2": "1/2",
+              "bank_bad_event_bits": 160,
+              "B": 136855320,
+              "norm": 11698.517854839562,
+              "shape_factor": 1069182.1798172093,
+              "shape_excess": 20606.179817209228,
+              "n": 1048576,
+              "m": 11,
+              "tilt_numerator": 346508848339597184,
+              "tilt_denominator": 18446744073709551616,
+              "certificate": {
+                "passed": true,
+                "log2_bad_probability_upper": "-160.00021370847167251262046945501006521186896347180398910405349413680902381237043",
+                "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+                "scope": "one honest iid coefficient bank; M exact repeated blocks"
+              }
+            },
+            "M": 32768
+          }
+        }
+      },
+      "rounding_backend": "c-pmf",
+      "dfr_budgets": {
+        "round_bits": 130,
+        "failure_bits": 128,
+        "source_bits": 136
+      },
+      "status": "verified",
+      "id": "7bd3169419939adac951",
+      "verified_spectral": {
+        "profile": "E20_15",
+        "Q": 1048576,
+        "M": 32768,
+        "p": 11,
+        "B_single": 136855320,
+        "B_QM": 4484475125760,
+        "tilt_numerator": 346508848339597184,
+        "tilt_denominator": 18446744073709551616,
+        "log2_spectral_failure_upper": "-160.00021370847167251262046945501006521186896347180398910405349413680902381237043",
+        "delta_spec": "2^-160",
+        "epsilon_g": "2^-150",
+        "delta": "0.9",
+        "sigma_H": "8.74",
+        "sigma_source_exact_runtime": "60.80421527777460947735586545785338494742146756628419067353355118577255042998634452616933243845747621405123459277569680476581089469854390559011630164526094441959",
+        "sigma_pad_exact_runtime": "26283593.71839414610990716107966843036237626075421334515787369197590310443014675101250893437476604281482371928063005309034445214486952022297061260913212331183804",
+        "posterior_parameter_interval": [
+          "147.88667170495405461395492355710872347745524342606512187285646257408296095667685",
+          "147.88667170495405461395492355710872347745524342606512187285646257408296095667687"
+        ],
+        "current_theorem_required_parameter_interval": [
+          "147.88566016485792290001195391352557881529629390944756044948959082423798276175424",
+          "147.88566016485792290001195391352557881529629390944756044948959082423798284926464"
+        ],
+        "current_theorem_sampling_margin_lower": "0.00101154009613171394296964358314466215894951661756142336687174984497810741221",
+        "current_theorem_convolution_margin_lower": "0.339265804363297638632461275751699358737142146501281673563597917580100686764306",
+        "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+        "verified": true
+      },
+      "security": {
+        "hint": {
+          "record": "security/b81799a425fa3fc8d37bb7b77b1e4b2831f5e948552c6b925c7a64ed3415d5e0.json",
+          "sha256": "5021262c131e804e1bab9cb674cbbe0ffa474666b249893710eac9f20fbcdb45",
+          "min_bits": 149.96933384335145
+        },
+        "terminal": {
+          "record": "security/4d9318ccb8ddda1a737e24bce02cea44c1f67af38ed84d7f346708e2855eb2a7.json",
+          "sha256": "babc387c23faef3d86554da9f2045368a49107fa8371e5080ee55ccf0649373b",
+          "min_bits": 132.4289812736502
+        },
+        "source": {
+          "record": "security/1a2bfb5b88dc1ecf4373facba4771c9e5df2be667d697e633db9686526e025eb.json",
+          "sha256": "a2fba7de5c51001066b90da56ad681f56164b89e1a1825f86ddba782e4d06335",
+          "min_bits": 153.3795926466172
+        },
+        "internal": {
+          "record": "security/1a2bfb5b88dc1ecf4373facba4771c9e5df2be667d697e633db9686526e025eb.json",
+          "sha256": "a2fba7de5c51001066b90da56ad681f56164b89e1a1825f86ddba782e4d06335",
+          "min_bits": 153.3795926466172
+        }
+      },
+      "dfr": {
+        "passed": true,
+        "source_log2_upper": "-1.01944173100122097969038570459138606596023037992146006810978392053282476272602725352672562726865546303949206542034207390956880069483342486397755096383686e7",
+        "reenc_log2_upper": "-131.199330734659288303711451979460426078666723487060251795532122618678481349653812265690774965614036215983386530878931038302385684436894660363824633187516",
+        "round_log2_upper": -130,
+        "theta_log2_upper": "-3.13107811375698992300171813038329332387259047453446489039415374678653423866742790471097305935206841276236124655612113475044880952707424804329100742690779e15",
+        "joint_log2_upper": "-129.478469531225363126727172791755201274531313326940781649400827493290152428184189174321275389342852287340604682233754471699863239574374051488781016363036",
+        "source_threshold_lower": "4.65063647000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e8",
+        "reenc_threshold_lower": "1.45058703250964102503056033842070542072110996663183471361499517875181054794725173130959999999999999999999999999999999999999999999999999999999999999999999e8",
+        "source_tilt": "0.015194339871574293000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?",
+        "reenc_tilt": "1.283199485603104000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?e-6",
+        "budgets": {
+          "round_bits": 130,
+          "failure_bits": 128,
+          "source_bits": 136,
+          "theta_bits": 250,
+          "main_bits": 128.42257117206424
+        },
+        "rounding": {
+          "source_v": 66437664,
+          "re_u": 519044,
+          "re_v": 66437664,
+          "terminal_multiplier_upper": "488.527523194634554097425201250625106788420641288246331021070433575610054649075660000000000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "precision": 512,
+        "exact_pmf": false,
+        "c_rounding_certificate": {
+          "method": "C CRT-NTT CBD PMF convolution + convex-order stop-loss certificate",
+          "scope": "unconditional terminal-u rounding envelope, union over both signs and d coefficients; independent rounding vector required",
+          "eta": 2,
+          "k": 5,
+          "degree": 256,
+          "N": 2560,
+          "round_bits": 130,
+          "precision_bits": 512,
+          "pmf_length": 1873,
+          "stoploss_power": 1,
+          "stoploss_shift": 486,
+          "multiplier_upper": "488.52752319463455409742520125062510678842064128824633102107043357561005464907566",
+          "subgaussian_multiplier_upper": "496.6381909705001119236897698662513043562562967538822320069364940351412656553463",
+          "pmf_missing_mass_upper": "3.66502863531178159365318035601848568768679811210263994784502410893756519842345614e-151",
+          "probability_bound": "2^-130",
+          "certified": true,
+          "full_PRE_PMF": false,
+          "normal_approximation": false,
+          "certificate_file": "eta2_k5_d256_rb130.json",
+          "certificate_sha256": "83aec5959d7b22956c052e170ec19bf4311586ac6a34ad3f32889759ed70f4a9"
+        },
+        "method": "C CBD PMF convex-order rounding + shared-secret spectral MGF/CDF",
+        "scope": "fixed pair; one honest Enc and RE; ideal sampling; source u exact"
+      }
+    },
+    "E20_20": {
+      "runtime": {
+        "name": "E20_20",
+        "logQ": 20,
+        "logM": 20,
+        "k": 5,
+        "ell": 6,
+        "q_bits": 33,
+        "base": 2043,
+        "length": 3,
+        "q": 8504032769,
+        "source_eta": 1,
+        "internal_eta": 1,
+        "terminal_eta": 8,
+        "source_std": "14.554423380561023",
+        "pad_std": "61642703.58068731",
+        "sigma_terminal": null,
+        "source_v_bits": 5,
+        "re_u_bits": 12,
+        "re_v_bits": 5,
+        "sigma_source": "36.48252916666477069967006853671303579998345016186102041809361193134016351783895940028894355731736977954061640473656275605807316987704288772686981427931122023322",
+        "sigma_pad": "154515343.7200484285286827263257769184789792668332530081107911802789244222165662607067781448556417605010268197673709377495479587330434776450205611203808760925311",
+        "sizes_bytes": {
+          "public_key_bytes": 12672,
+          "secret_key_bytes": 10560,
+          "source_ct_bytes": 5440,
+          "reenc_ct_bytes": 2080,
+          "rekey_body_bytes": 95040,
+          "rekey_seed_bytes": 32,
+          "rekey_bytes": 95072
+        }
+      },
+      "candidate": {
+        "profile": "E20_20",
+        "degree": 256,
+        "Q_log2": 20,
+        "M_log2": 20,
+        "Q": 1048576,
+        "M": 1048576,
+        "k": 5,
+        "ell": 6,
+        "q": 8504032769,
+        "q_bits": 33,
+        "sigma_H": "8.74",
+        "B_original": 136855320,
+        "B_QM": 143503204024320,
+        "source_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "internal_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "terminal_distribution": {
+          "kind": "cbd",
+          "eta": 8
+        },
+        "gadget_base": 2043,
+        "gadget_length": 3,
+        "source_v_bits": 5,
+        "re_u_bits": 12,
+        "re_v_bits": 5,
+        "source_std": "14.554423380561023",
+        "pad_std": "61642703.58068731",
+        "correctness_certificate": {
+          "bank": {
+            "original_bank": {
+              "method": "spherical_average",
+              "Q": 1048576,
+              "p": 11,
+              "d": 256,
+              "tau2": "1/2",
+              "bank_bad_event_bits": 160,
+              "B": 136855320,
+              "norm": 11698.517854839562,
+              "shape_factor": 1069182.1798172093,
+              "shape_excess": 20606.179817209228,
+              "n": 1048576,
+              "m": 11,
+              "tilt_numerator": 346508848339597184,
+              "tilt_denominator": 18446744073709551616,
+              "certificate": {
+                "passed": true,
+                "log2_bad_probability_upper": "-160.00021370847167251262046945501006521186896347180398910405349413680902381237043",
+                "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+                "scope": "one honest iid coefficient bank; M exact repeated blocks"
+              }
+            },
+            "M": 1048576
+          }
+        }
+      },
+      "rounding_backend": "c-pmf",
+      "dfr_budgets": {
+        "round_bits": 130,
+        "failure_bits": 128,
+        "source_bits": 136
+      },
+      "status": "verified",
+      "id": "65a0945da38eb3266eb3",
+      "verified_spectral": {
+        "profile": "E20_20",
+        "Q": 1048576,
+        "M": 1048576,
+        "p": 11,
+        "B_single": 136855320,
+        "B_QM": 143503204024320,
+        "tilt_numerator": 346508848339597184,
+        "tilt_denominator": 18446744073709551616,
+        "log2_spectral_failure_upper": "-160.00021370847167251262046945501006521186896347180398910405349413680902381237043",
+        "delta_spec": "2^-160",
+        "epsilon_g": "2^-150",
+        "delta": "0.9",
+        "sigma_H": "8.74",
+        "sigma_source_exact_runtime": "36.48252916666477069967006853671303579998345016186102041809361193134016351783895940028894355731736977954061640473656275605807316987704288772686981427931122023322",
+        "sigma_pad_exact_runtime": "154515343.7200484285286827263257769184789792668332530081107911802789244222165662607067781448556417605010268197673709377495479587330434776450205611203808760925311",
+        "posterior_parameter_interval": [
+          "147.88662963938856816042682558000143888315057147167144213493636538561840013757985",
+          "147.88662963938856816042682558000143888315057147167144213493636538561840013757987"
+        ],
+        "current_theorem_required_parameter_interval": [
+          "147.88566016485792290001195391352557881529629390944756044948959082423798276175424",
+          "147.88566016485792290001195391352557881529629390944756044948959082423798284926464"
+        ],
+        "current_theorem_sampling_margin_lower": "0.00096947453064526041487166647586006785427756222388168544677456138041728831521",
+        "current_theorem_convolution_margin_lower": "0.339265804363297638632461275751699358737142146501281673563597917580100686764306",
+        "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+        "verified": true
+      },
+      "security": {
+        "hint": {
+          "record": "security/3eef3967cda6cfb0357a31d7cf7d0d15b6b7ce3e25cc17463c34248c2cd08173.json",
+          "sha256": "c83c6e82ba51daaebcee7a94773c29c65991421d03824d47bc6b63c5cc82cd61",
+          "min_bits": 139.59170778501607
+        },
+        "terminal": {
+          "record": "security/99cd2b40f79bc86a5ece35aa472702cffbc0db33f658ba220d1d2a0669ccdd97.json",
+          "sha256": "bf0c195f4c27cbdc01a7fe4abdc8daeaa72afd46d1d82c42185530c1fe1f062d",
+          "min_bits": 132.41767146687434
+        },
+        "source": {
+          "record": "security/744ec4fc6ac649605aa00761cf13c30f11b438adcb3db531ef37009624172244.json",
+          "sha256": "b8a3e2e0e684244522f62e01b1780d56b8e558d5389688eea2cf35bfe7ca3253",
+          "min_bits": 144.6650253676443
+        },
+        "internal": {
+          "record": "security/744ec4fc6ac649605aa00761cf13c30f11b438adcb3db531ef37009624172244.json",
+          "sha256": "b8a3e2e0e684244522f62e01b1780d56b8e558d5389688eea2cf35bfe7ca3253",
+          "min_bits": 144.6650253676443
+        }
+      },
+      "dfr": {
+        "passed": true,
+        "source_log2_upper": "-7.28182846878099638452222504052022336579613318222110648177303729892131298773633603283254697298321219952727086653734120014790153177868530284833097445084085e7",
+        "reenc_log2_upper": "-130.386628978407195499189077763352507333142639133609717038596028984358571917449197007721623591906035023093723171100876991779522798843640743666384567004301",
+        "round_log2_upper": -130,
+        "theta_log2_upper": "-1.08210059611441983486376529359540736827888122822826909628194164728100218187459108019920335913968798691106129903736620217417079552295276851313728856550482e17",
+        "joint_log2_upper": "-129.180401436383338699980181434054078971514602389404150082437585816640003629767775448178046227444696377477676238041985344559859048301165944586891609165207",
+        "source_threshold_lower": "1.99313267900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e9",
+        "reenc_threshold_lower": "8.43630499223040767215040900615121432227136337342580718892248234448869174708601210729899999999999999999999999999999999999999999999999999999999999999999999e8",
+        "source_tilt": "0.02532389978595715000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?",
+        "reenc_tilt": "2.202329338773460400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?e-7",
+        "budgets": {
+          "round_bits": 130,
+          "failure_bits": 128,
+          "source_bits": 136,
+          "theta_bits": 250,
+          "main_bits": 128.42257117206424
+        },
+        "rounding": {
+          "source_v": 132875512,
+          "re_u": 1038090,
+          "re_v": 132875512,
+          "terminal_multiplier_upper": "979.324208668765938198960686823761492522674972938203124110387120144814828474793890000000000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "precision": 512,
+        "exact_pmf": false,
+        "c_rounding_certificate": {
+          "method": "C CRT-NTT CBD PMF convolution + convex-order stop-loss certificate",
+          "scope": "unconditional terminal-u rounding envelope, union over both signs and d coefficients; independent rounding vector required",
+          "eta": 8,
+          "k": 5,
+          "degree": 256,
+          "N": 10240,
+          "round_bits": 130,
+          "precision_bits": 512,
+          "pmf_length": 3773,
+          "stoploss_power": 1,
+          "stoploss_shift": 974,
+          "multiplier_upper": "979.32420866876593819896068682376149252267497293820312411038712014481482847479389",
+          "subgaussian_multiplier_upper": "993.27638194100022384737953973250260871251259350776446401387298807028253131069259",
+          "pmf_missing_mass_upper": "1.77650217876457724418447502849011621072470175482647091814653295178640344853985148e-150",
+          "probability_bound": "2^-130",
+          "certified": true,
+          "full_PRE_PMF": false,
+          "normal_approximation": false,
+          "certificate_file": "eta8_k5_d256_rb130.json",
+          "certificate_sha256": "9370cc231e9a5b22154795e3149726a31312c2da1bd2a16a0aaf2dc3b4600913"
+        },
+        "method": "C CBD PMF convex-order rounding + shared-secret spectral MGF/CDF",
+        "scope": "fixed pair; one honest Enc and RE; ideal sampling; source u exact"
+      }
+    },
+    "E25_15": {
+      "runtime": {
+        "name": "E25_15",
+        "logQ": 25,
+        "logM": 15,
+        "k": 5,
+        "ell": 6,
+        "q_bits": 33,
+        "base": 2043,
+        "length": 3,
+        "q": 8504032769,
+        "source_eta": 1,
+        "internal_eta": 1,
+        "terminal_eta": 8,
+        "source_std": "14.554423380561023",
+        "pad_std": "61155747.747359276",
+        "sigma_terminal": null,
+        "source_v_bits": 5,
+        "re_u_bits": 12,
+        "re_v_bits": 5,
+        "sigma_source": "36.48252916666477069967006853671303579998345016186102041809361193134016351783895940028894355731736977954061640473656275605807316987704288772686981427931122023322",
+        "sigma_pad": "153294726.4597318776119651332103698205407628474316344467812687975853229411579220579073081241084927396850871856001709120454201097035942421470266508451985077355747",
+        "sizes_bytes": {
+          "public_key_bytes": 12672,
+          "secret_key_bytes": 10560,
+          "source_ct_bytes": 5440,
+          "reenc_ct_bytes": 2080,
+          "rekey_body_bytes": 95040,
+          "rekey_seed_bytes": 32,
+          "rekey_bytes": 95072
+        }
+      },
+      "candidate": {
+        "profile": "E25_15",
+        "degree": 256,
+        "Q_log2": 25,
+        "M_log2": 15,
+        "Q": 33554432,
+        "M": 32768,
+        "k": 5,
+        "ell": 6,
+        "q": 8504032769,
+        "q_bits": 33,
+        "sigma_H": "8.74",
+        "B_original": 4310452541,
+        "B_QM": 141244908863488,
+        "source_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "internal_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "terminal_distribution": {
+          "kind": "cbd",
+          "eta": 8
+        },
+        "gadget_base": 2043,
+        "gadget_length": 3,
+        "source_v_bits": 5,
+        "re_u_bits": 12,
+        "re_v_bits": 5,
+        "source_std": "14.554423380561023",
+        "pad_std": "61155747.747359276",
+        "correctness_certificate": {
+          "bank": {
+            "original_bank": {
+              "method": "spherical_average",
+              "Q": 33554432,
+              "p": 11,
+              "d": 256,
+              "tau2": "1/2",
+              "bank_bad_event_bits": 160,
+              "B": 4310452541,
+              "norm": 65654.0367456564,
+              "shape_factor": 33675410.47079765,
+              "shape_excess": 120978.47079765196,
+              "n": 33554432,
+              "m": 11,
+              "tilt_numerator": 64713706985389056,
+              "tilt_denominator": 18446744073709551616,
+              "certificate": {
+                "passed": true,
+                "log2_bad_probability_upper": "-160.00003530188838015465130091232965595623046705341529124354394671782991261846078",
+                "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+                "scope": "one honest iid coefficient bank; M exact repeated blocks"
+              }
+            },
+            "M": 32768
+          }
+        }
+      },
+      "rounding_backend": "c-pmf",
+      "dfr_budgets": {
+        "round_bits": 130,
+        "failure_bits": 128,
+        "source_bits": 136
+      },
+      "status": "verified",
+      "id": "006736fcf27713f5a1ce",
+      "verified_spectral": {
+        "profile": "E25_15",
+        "Q": 33554432,
+        "M": 32768,
+        "p": 11,
+        "B_single": 4310452541,
+        "B_QM": 141244908863488,
+        "tilt_numerator": 64713706985389056,
+        "tilt_denominator": 18446744073709551616,
+        "log2_spectral_failure_upper": "-160.00003530188838015465130091232965595623046705341529124354394671782991261846078",
+        "delta_spec": "2^-160",
+        "epsilon_g": "2^-150",
+        "delta": "0.9",
+        "sigma_H": "8.74",
+        "sigma_source_exact_runtime": "36.48252916666477069967006853671303579998345016186102041809361193134016351783895940028894355731736977954061640473656275605807316987704288772686981427931122023322",
+        "sigma_pad_exact_runtime": "153294726.4597318776119651332103698205407628474316344467812687975853229411579220579073081241084927396850871856001709120454201097035942421470266508451985077355747",
+        "posterior_parameter_interval": [
+          "147.88662963938852295401496137360280029859923292345733469946140441524378620307737",
+          "147.88662963938852295401496137360280029859923292345733469946140441524378620307739"
+        ],
+        "current_theorem_required_parameter_interval": [
+          "147.88566016485792290001195391352557881529629390944756044948959082423798276175424",
+          "147.88566016485792290001195391352557881529629390944756044948959082423798284926464"
+        ],
+        "current_theorem_sampling_margin_lower": "0.00096947453060005400300746007722148330293901400977424997181359100580335381273",
+        "current_theorem_convolution_margin_lower": "0.339265804363297638632461275751699358737142146501281673563597917580100686764306",
+        "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+        "verified": true
+      },
+      "security": {
+        "hint": {
+          "record": "security/3eef3967cda6cfb0357a31d7cf7d0d15b6b7ce3e25cc17463c34248c2cd08173.json",
+          "sha256": "c83c6e82ba51daaebcee7a94773c29c65991421d03824d47bc6b63c5cc82cd61",
+          "min_bits": 139.59170778501607
+        },
+        "terminal": {
+          "record": "security/99cd2b40f79bc86a5ece35aa472702cffbc0db33f658ba220d1d2a0669ccdd97.json",
+          "sha256": "bf0c195f4c27cbdc01a7fe4abdc8daeaa72afd46d1d82c42185530c1fe1f062d",
+          "min_bits": 132.41767146687434
+        },
+        "source": {
+          "record": "security/744ec4fc6ac649605aa00761cf13c30f11b438adcb3db531ef37009624172244.json",
+          "sha256": "b8a3e2e0e684244522f62e01b1780d56b8e558d5389688eea2cf35bfe7ca3253",
+          "min_bits": 144.6650253676443
+        },
+        "internal": {
+          "record": "security/744ec4fc6ac649605aa00761cf13c30f11b438adcb3db531ef37009624172244.json",
+          "sha256": "b8a3e2e0e684244522f62e01b1780d56b8e558d5389688eea2cf35bfe7ca3253",
+          "min_bits": 144.6650253676443
+        }
+      },
+      "dfr": {
+        "passed": true,
+        "source_log2_upper": "-7.28182846878099638452222504052022336579613318222110648177303729892131298773633603283254697298321219952727086653734120014790153177868530284833097445084085e7",
+        "reenc_log2_upper": "-132.507677420957050153709518650844538887668575917362571386987455519379227746064253546361823246712036252714236844722833463259859522623597088698152200330022",
+        "round_log2_upper": -130,
+        "theta_log2_upper": "-1.06507169033943430467105346937010981221700701190241034169890139608819141746788154773622418574271567298080167328408042570964665015786850896532042670395193e17",
+        "joint_log2_upper": "-129.766310125081035750138890257402672164489012388746550209144165989691647393708840062875925378737827841227021273921225361234019312467367085333020602326363",
+        "source_threshold_lower": "1.99313267900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e9",
+        "reenc_threshold_lower": "8.43630499223040767215040900615121432227136337342580718892248234448869174708601210729899999999999999999999999999999999999999999999999999999999999999999999e8",
+        "source_tilt": "0.02532389978595715000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?",
+        "reenc_tilt": "2.219749879370816600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?e-7",
+        "budgets": {
+          "round_bits": 130,
+          "failure_bits": 128,
+          "source_bits": 136,
+          "theta_bits": 250,
+          "main_bits": 128.42257117206424
+        },
+        "rounding": {
+          "source_v": 132875512,
+          "re_u": 1038090,
+          "re_v": 132875512,
+          "terminal_multiplier_upper": "979.324208668765938198960686823761492522674972938203124110387120144814828474793890000000000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "precision": 512,
+        "exact_pmf": false,
+        "c_rounding_certificate": {
+          "method": "C CRT-NTT CBD PMF convolution + convex-order stop-loss certificate",
+          "scope": "unconditional terminal-u rounding envelope, union over both signs and d coefficients; independent rounding vector required",
+          "eta": 8,
+          "k": 5,
+          "degree": 256,
+          "N": 10240,
+          "round_bits": 130,
+          "precision_bits": 512,
+          "pmf_length": 3773,
+          "stoploss_power": 1,
+          "stoploss_shift": 974,
+          "multiplier_upper": "979.32420866876593819896068682376149252267497293820312411038712014481482847479389",
+          "subgaussian_multiplier_upper": "993.27638194100022384737953973250260871251259350776446401387298807028253131069259",
+          "pmf_missing_mass_upper": "1.77650217876457724418447502849011621072470175482647091814653295178640344853985148e-150",
+          "probability_bound": "2^-130",
+          "certified": true,
+          "full_PRE_PMF": false,
+          "normal_approximation": false,
+          "certificate_file": "eta8_k5_d256_rb130.json",
+          "certificate_sha256": "9370cc231e9a5b22154795e3149726a31312c2da1bd2a16a0aaf2dc3b4600913"
+        },
+        "method": "C CBD PMF convex-order rounding + shared-secret spectral MGF/CDF",
+        "scope": "fixed pair; one honest Enc and RE; ideal sampling; source u exact"
+      }
+    },
+    "E30_20": {
+      "runtime": {
+        "name": "E30_20",
+        "logQ": 30,
+        "logM": 20,
+        "k": 6,
+        "ell": 7,
+        "q_bits": 38,
+        "base": 521661,
+        "length": 2,
+        "q": 272129121793,
+        "source_eta": 1,
+        "internal_eta": 1,
+        "terminal_eta": 4,
+        "source_std": "24.261730147587606",
+        "pad_std": "1880712315.390332",
+        "sigma_terminal": null,
+        "source_v_bits": 5,
+        "re_u_bits": 12,
+        "re_v_bits": 4,
+        "sigma_source": "60.81513877941045000417554261979869598940753166322383307509349168893152524723316731001843982148511352642809435563494600465936212794174979787687329467229048602956",
+        "sigma_pad": "4714246666.204141953357784709402565750503395659803544751912025010542585693766432729915516722984382270039942235181982680235449465827121544516235112455546572018329",
+        "sizes_bytes": {
+          "public_key_bytes": 17024,
+          "secret_key_bytes": 14592,
+          "source_ct_bytes": 7456,
+          "reenc_ct_bytes": 2432,
+          "rekey_body_bytes": 102144,
+          "rekey_seed_bytes": 32,
+          "rekey_bytes": 102176
+        }
+      },
+      "candidate": {
+        "profile": "E30_20",
+        "degree": 256,
+        "Q_log2": 30,
+        "M_log2": 20,
+        "Q": 1073741824,
+        "M": 1048576,
+        "k": 6,
+        "ell": 7,
+        "q": 272129121793,
+        "q_bits": 38,
+        "sigma_H": "8.74",
+        "B_original": 137534227428,
+        "B_QM": 144215090059542528,
+        "source_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "internal_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "terminal_distribution": {
+          "kind": "cbd",
+          "eta": 4
+        },
+        "gadget_base": 521661,
+        "gadget_length": 2,
+        "source_v_bits": 5,
+        "re_u_bits": 12,
+        "re_v_bits": 4,
+        "source_std": "24.261730147587606",
+        "pad_std": "1880712315.390332",
+        "correctness_certificate": {
+          "bank": {
+            "original_bank": {
+              "method": "spherical_average",
+              "Q": 1073741824,
+              "p": 13,
+              "d": 256,
+              "tau2": "1/2",
+              "bank_bad_event_bits": 160,
+              "B": 137534227428,
+              "norm": 370856.07373750804,
+              "shape_factor": 1074486151.777017,
+              "shape_excess": 744327.7770172094,
+              "n": 1073741824,
+              "m": 13,
+              "tilt_numerator": 12474146247228360,
+              "tilt_denominator": 18446744073709551616,
+              "certificate": {
+                "passed": true,
+                "log2_bad_probability_upper": "-160.00001139179821235986724240834558564893544691878923582554618409926936906732478",
+                "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+                "scope": "one honest iid coefficient bank; M exact repeated blocks"
+              }
+            },
+            "M": 1048576
+          }
+        }
+      },
+      "rounding_backend": "c-pmf",
+      "dfr_budgets": {
+        "round_bits": 130,
+        "failure_bits": 128,
+        "source_bits": 136
+      },
+      "status": "verified",
+      "id": "a49a3acd311000d7c735",
+      "verified_spectral": {
+        "profile": "E30_20",
+        "Q": 1073741824,
+        "M": 1048576,
+        "p": 13,
+        "B_single": 137534227428,
+        "B_QM": 144215090059542528,
+        "tilt_numerator": 12474146247228360,
+        "tilt_denominator": 18446744073709551616,
+        "log2_spectral_failure_upper": "-160.00001139179821235986724240834558564893544691878923582554618409926936906732478",
+        "delta_spec": "2^-160",
+        "epsilon_g": "2^-150",
+        "delta": "0.9",
+        "sigma_H": "8.74",
+        "sigma_source_exact_runtime": "60.81513877941045000417554261979869598940753166322383307509349168893152524723316731001843982148511352642809435563494600465936212794174979787687329467229048602956",
+        "sigma_pad_exact_runtime": "4714246666.204141953357784709402565750503395659803544751912025010542585693766432729915516722984382270039942235181982680235449465827121544516235112455546572018329",
+        "posterior_parameter_interval": [
+          "147.93981227753303414948757126999915571378804990935477700387883857623707734705049",
+          "147.93981227753303414948757126999915571378804990935477700387883857623707734705051"
+        ],
+        "current_theorem_required_parameter_interval": [
+          "147.93880037395699295974204408924485073725886989266615179379752950200798641529505",
+          "147.93880037395699295974204408924485073725886989266615179379752950200798650449696"
+        ],
+        "current_theorem_sampling_margin_lower": "0.00101190357604118974552718075430497652918001668862521008130907422909084255353",
+        "current_theorem_convolution_margin_lower": "0.286090837687627877257208450212517360531160832295359373504545130928096515795295",
+        "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+        "verified": true
+      },
+      "security": {
+        "hint": {
+          "record": "security/4899ad41e48d50cd38343ee38c71752318b046d8ce81dcddabd1fc54d4f2e990.json",
+          "sha256": "2adc5fb1fbc35c2c70bc9b6ef9acb4a9c0198e601bf8e47be696728167e0ef39",
+          "min_bits": 144.27757103798717
+        },
+        "terminal": {
+          "record": "security/e22ab41875c248093452eeee07ba1753c567c16fdd3fc88e5b976290435abf2a.json",
+          "sha256": "5042e69c5e709d8c2cba24aeb4c52cbeffb61ae629de7f9c24cbdbbe9394cf7a",
+          "min_bits": 133.97467746277033
+        },
+        "source": {
+          "record": "security/f1c3c673d0fc185f245be6197f49eb1f66eaa7b817e5b6ef29075674e98c241e.json",
+          "sha256": "a5c2faeea81a90974ffccf667211f6151f4ef012db3dd6e5b5b4f7b70a133abd",
+          "min_bits": 148.41741638803245
+        },
+        "internal": {
+          "record": "security/f1c3c673d0fc185f245be6197f49eb1f66eaa7b817e5b6ef29075674e98c241e.json",
+          "sha256": "a5c2faeea81a90974ffccf667211f6151f4ef012db3dd6e5b5b4f7b70a133abd",
+          "min_bits": 148.41741638803245
+        }
+      },
+      "dfr": {
+        "passed": true,
+        "source_log2_upper": "-1.29047112397815454328016243542744201651420590634948536991918064997501444778134597200691900702752991449313068211054617828980219109729868410349212210855122e9",
+        "reenc_log2_upper": "-134.160247708241154447298652974284459722751344968668792009331485308047338399657497158902285695060484487418788191490831272632693427457326566011394768240461",
+        "round_log2_upper": -130,
+        "theta_log2_upper": "-1.00727723062101579142274468824980632163604076217624757971614340397094674935961117957551930568699024227014692229735538386962335087825309533437888382010245e20",
+        "joint_log2_upper": "-129.921486535200242486072228271366989463415769828111227761485328000901460113553763439952518289005873299046230715786619519684983930690485662235948558151512",
+        "source_threshold_lower": "6.37802629190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e10",
+        "reenc_threshold_lower": "3.00898520633416804322054538708172852245919748021950079957485624049364707783400298900072699999999999999999999999999999999999999999999999999999999999999999e10",
+        "source_tilt": "0.01402450357210428100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?",
+        "reenc_tilt": "5.519219451585661500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?e-9",
+        "budgets": {
+          "round_bits": 130,
+          "failure_bits": 128,
+          "source_bits": 136,
+          "theta_bits": 250,
+          "main_bits": 128.42257117206424
+        },
+        "rounding": {
+          "source_v": 4252017528,
+          "re_u": 33218887,
+          "re_v": 8504035056,
+          "terminal_multiplier_upper": "758.194451236681095540454023314589521780426454318141122676730186506956997736256790000000000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "precision": 512,
+        "exact_pmf": false,
+        "c_rounding_certificate": {
+          "method": "C CRT-NTT CBD PMF convolution + convex-order stop-loss certificate",
+          "scope": "unconditional terminal-u rounding envelope, union over both signs and d coefficients; independent rounding vector required",
+          "eta": 4,
+          "k": 6,
+          "degree": 256,
+          "N": 6144,
+          "round_bits": 130,
+          "precision_bits": 512,
+          "pmf_length": 2919,
+          "stoploss_power": 1,
+          "stoploss_shift": 754,
+          "multiplier_upper": "758.19445123668109554045402331458952178042645431814112267673018650695699773625679",
+          "subgaussian_multiplier_upper": "769.388577087730262961501122208584586451285217027841599081101805005172259153522",
+          "pmf_missing_mass_upper": "9.97776823019963658117465339902631288764224361898842434315643722616335922354680427e-151",
+          "probability_bound": "2^-130",
+          "certified": true,
+          "full_PRE_PMF": false,
+          "normal_approximation": false,
+          "certificate_file": "eta4_k6_d256_rb130.json",
+          "certificate_sha256": "c2b79197bab71c6114cc57c1a4d65e8d803904e66e072756dd49665eafa7e9a4"
+        },
+        "method": "C CBD PMF convex-order rounding + shared-secret spectral MGF/CDF",
+        "scope": "fixed pair; one honest Enc and RE; ideal sampling; source u exact"
+      }
+    },
+    "E50_25": {
+      "runtime": {
+        "name": "E50_25",
+        "logQ": 50,
+        "logM": 25,
+        "k": 8,
+        "ell": 9,
+        "q_bits": 50,
+        "base": 33386239,
+        "length": 2,
+        "q": 1114640907765761,
+        "source_eta": 1,
+        "internal_eta": 1,
+        "terminal_eta": 4,
+        "source_std": "38.8299639214878",
+        "pad_std": "10757902149830.342",
+        "sigma_terminal": null,
+        "source_v_bits": 7,
+        "re_u_bits": 12,
+        "re_v_bits": 6,
+        "sigma_source": "97.33228546850296236930204139589558678249043977322609850084493468921062915251610265898237723515018020108204467950070901794051523627841350795358034513148475469355",
+        "sigma_pad": "26966061704478.36122177229526812525216438068430629448837140203468134565065633204180266564729095451595674994700512688474782811868793729427080892416652149791557326",
+        "sizes_bytes": {
+          "public_key_bytes": 28800,
+          "secret_key_bytes": 25600,
+          "source_ct_bytes": 13024,
+          "reenc_ct_bytes": 3264,
+          "rekey_body_bytes": 230400,
+          "rekey_seed_bytes": 32,
+          "rekey_bytes": 230432
+        }
+      },
+      "candidate": {
+        "profile": "E50_25",
+        "degree": 256,
+        "Q_log2": 50,
+        "M_log2": 25,
+        "Q": 1125899906842624,
+        "M": 33554432,
+        "k": 8,
+        "ell": 9,
+        "q": 1114640907765761,
+        "q_bits": 50,
+        "sigma_H": "8.74",
+        "B_original": 144115311958099360,
+        "B_QM": 4835707435256831824363520,
+        "source_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "internal_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "terminal_distribution": {
+          "kind": "cbd",
+          "eta": 4
+        },
+        "gadget_base": 33386239,
+        "gadget_length": 2,
+        "source_v_bits": 7,
+        "re_u_bits": 12,
+        "re_v_bits": 6,
+        "source_std": "38.8299639214878",
+        "pad_std": "10757902149830.342",
+        "correctness_certificate": {
+          "bank": {
+            "original_bank": {
+              "method": "spherical_average",
+              "Q": 1125899906842624,
+              "p": 17,
+              "d": 256,
+              "tau2": "1/2",
+              "bank_bad_event_bits": 160,
+              "B": 144115311958099360,
+              "norm": 379625225.66091335,
+              "shape_factor": 1125900874672651.2,
+              "shape_excess": 967830027.3033795,
+              "n": 1125899906842624,
+              "m": 17,
+              "tilt_numerator": 15545853440211,
+              "tilt_denominator": 18446744073709551616,
+              "certificate": {
+                "passed": true,
+                "log2_bad_probability_upper": "-160.00001170217465192714054747676286327895159731689682603103245909290835052827454",
+                "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+                "scope": "one honest iid coefficient bank; M exact repeated blocks"
+              }
+            },
+            "M": 33554432
+          }
+        }
+      },
+      "rounding_backend": "c-pmf",
+      "dfr_budgets": {
+        "round_bits": 130,
+        "failure_bits": 128,
+        "source_bits": 136
+      },
+      "status": "verified",
+      "id": "8e65e51eff1b0a0444eb",
+      "verified_spectral": {
+        "profile": "E50_25",
+        "Q": 1125899906842624,
+        "M": 33554432,
+        "p": 17,
+        "B_single": 144115311958099360,
+        "B_QM": 4835707435256831824363520,
+        "tilt_numerator": 15545853440211,
+        "tilt_denominator": 18446744073709551616,
+        "log2_spectral_failure_upper": "-160.00001170217465192714054747676286327895159731689682603103245909290835052827454",
+        "delta_spec": "2^-160",
+        "epsilon_g": "2^-150",
+        "delta": "0.9",
+        "sigma_H": "8.74",
+        "sigma_source_exact_runtime": "97.33228546850296236930204139589558678249043977322609850084493468921062915251610265898237723515018020108204467950070901794051523627841350795358034513148475469355",
+        "sigma_pad_exact_runtime": "26966061704478.36122177229526812525216438068430629448837140203468134565065633204180266564729095451595674994700512688474782811868793729427080892416652149791557326",
+        "posterior_parameter_interval": [
+          "148.02517338678038298845191879142095480452160482359631392749002510148957972419936",
+          "148.02517338678038298845191879142095480452160482359631392749002510148957972419938"
+        ],
+        "current_theorem_required_parameter_interval": [
+          "148.02414646696928352832269005286788900950951755637873538148349040371962007247912",
+          "148.02414646696928352832269005286788900950951755637873538148349040371962016439769"
+        ],
+        "current_theorem_sampling_margin_lower": "0.00102691981109946012922873855306579501208726721757854600653469776995955980167",
+        "current_theorem_convolution_margin_lower": "0.200699758647465548753975129585943399754595188108869083243555352647854412131213",
+        "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+        "verified": true
+      },
+      "security": {
+        "hint": {
+          "record": "security/9fada1fd248f91d46cfdcfd4f8d8c9aa317eb543088d71609bed5ce8461b170b.json",
+          "sha256": "6b6daef1b9c9db181d35853a37f269667a711976340f9829c5c5fbb442874018",
+          "min_bits": 143.9552286353597
+        },
+        "terminal": {
+          "record": "security/27853ab1e4276046b514f72bea771d20b36745f5d7e22893132bb069da10251c.json",
+          "sha256": "5920e03dafc44e27ef3e199e06236baa7dc59b46ea8dae357e09a2fb5bbcf2b3",
+          "min_bits": 136.03506361848684
+        },
+        "source": {
+          "record": "security/ab7fdd62fb080a5228bcb4f8c167fae8b113a8a8b4a0a46b70bfa8d30d3256e5.json",
+          "sha256": "1b9fbf2686b4aab23a3d5d8ab0ae90b50938ae34da377b5af9a25dd9a70945d1",
+          "min_bits": 147.30200482069444
+        },
+        "internal": {
+          "record": "security/ab7fdd62fb080a5228bcb4f8c167fae8b113a8a8b4a0a46b70bfa8d30d3256e5.json",
+          "sha256": "1b9fbf2686b4aab23a3d5d8ab0ae90b50938ae34da377b5af9a25dd9a70945d1",
+          "min_bits": 147.30200482069444
+        }
+      },
+      "dfr": {
+        "passed": true,
+        "source_log2_upper": "-3.04696667589596761042348090102071121337388532698584243142762342058236802860780679603728532752714964620585402578034552748645237822855892230570815624802080e12",
+        "reenc_log2_upper": "-129.744789743823583369332695152895972600525135407214015045302862000573093861709980398554797713874077302760610408448971433333539395354399586478209129016434",
+        "round_log2_upper": -130,
+        "theta_log2_upper": "-3.29578945259344778732366489552384010239569355401193344154678269700162612069196437005519791740026371896989969049806520592118156260289097651431945272165675e27",
+        "joint_log2_upper": "-128.866758933145741101923850304622957826110075850894240556439460757275462656769557090120941928160268211265523743938566646857319780786601461266594754025769",
+        "source_threshold_lower": "2.74306160895479000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e14",
+        "reenc_threshold_lower": "1.46437339018739595199834076624428087385483982727802057511865572134321521459844814925039851199999999999999999999999999999999999999999999999999999999999999e14",
+        "source_tilt": "0.007699412779746938000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?",
+        "reenc_tilt": "1.2658248371978330000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?e-12",
+        "budgets": {
+          "round_bits": 130,
+          "failure_bits": 128,
+          "source_bits": 136,
+          "theta_bits": 250,
+          "main_bits": 128.42257117206424
+        },
+        "rounding": {
+          "source_v": 4354066045960,
+          "re_u": 136064563936,
+          "re_v": 8708132091920,
+          "terminal_multiplier_upper": "875.765786019557708687602282189934909685021674651743488964885899016522597883844550000000000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "precision": 512,
+        "exact_pmf": false,
+        "c_rounding_certificate": {
+          "method": "C CRT-NTT CBD PMF convolution + convex-order stop-loss certificate",
+          "scope": "unconditional terminal-u rounding envelope, union over both signs and d coefficients; independent rounding vector required",
+          "eta": 4,
+          "k": 8,
+          "degree": 256,
+          "N": 8192,
+          "round_bits": 130,
+          "precision_bits": 512,
+          "pmf_length": 3373,
+          "stoploss_power": 1,
+          "stoploss_shift": 871,
+          "multiplier_upper": "875.76578601955770868760228218993490968502167465174348896488589901652259788384455",
+          "subgaussian_multiplier_upper": "888.41340418604840211026082289455577379555352560841896292856158396230983318108441",
+          "pmf_missing_mass_upper": "1.36905302461910994979848959330637613518882511489125068951247990524334446036347092e-150",
+          "probability_bound": "2^-130",
+          "certified": true,
+          "full_PRE_PMF": false,
+          "normal_approximation": false,
+          "certificate_file": "eta4_k8_d256_rb130.json",
+          "certificate_sha256": "9f8b44092680d7200c48db6c20023625e28df5b6b4ddc4182fff93f33624b35d"
+        },
+        "method": "C CBD PMF convex-order rounding + shared-secret spectral MGF/CDF",
+        "scope": "fixed pair; one honest Enc and RE; ideal sampling; source u exact"
+      }
+    },
+    "E60_30": {
+      "runtime": {
+        "name": "E60_30",
+        "logQ": 60,
+        "logM": 30,
+        "k": 9,
+        "ell": 10,
+        "q_bits": 57,
+        "base": 377722169,
+        "length": 2,
+        "q": 142674036195079681,
+        "source_eta": 1,
+        "internal_eta": 1,
+        "terminal_eta": 4,
+        "source_std": "310.6768422000753",
+        "pad_std": "1932580503682753.2",
+        "sigma_terminal": null,
+        "source_v_bits": 8,
+        "re_u_bits": 13,
+        "re_v_bits": 6,
+        "sigma_source": "778.7513569317823554262231445193110700114569668175175642489363310805966575819406739219149280305285735819225314629277277476451734775155263748256166344158472645044",
+        "sigma_pad": "4844260933531809.566066706801476039573665657239517614938260636307500842342401688296061755015926636797703160648113746717021326763006930820101031297671556952499542",
+        "sizes_bytes": {
+          "public_key_bytes": 36480,
+          "secret_key_bytes": 32832,
+          "source_ct_bytes": 16672,
+          "reenc_ct_bytes": 3936,
+          "rekey_body_bytes": 328320,
+          "rekey_seed_bytes": 32,
+          "rekey_bytes": 328352
+        }
+      },
+      "candidate": {
+        "profile": "E60_30",
+        "degree": 256,
+        "Q_log2": 60,
+        "M_log2": 30,
+        "Q": 1152921504606846976,
+        "M": 1073741824,
+        "k": 9,
+        "ell": 10,
+        "q": 142674036195079681,
+        "q_bits": 57,
+        "sigma_H": "8.74",
+        "B_original": 147573957004665159680,
+        "B_QM": 158456329769086745064054456320,
+        "source_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "internal_distribution": {
+          "kind": "cbd",
+          "eta": 1
+        },
+        "terminal_distribution": {
+          "kind": "cbd",
+          "eta": 4
+        },
+        "gadget_base": 377722169,
+        "gadget_length": 2,
+        "source_v_bits": 8,
+        "re_u_bits": 13,
+        "re_v_bits": 6,
+        "source_std": "310.6768422000753",
+        "pad_std": "1932580503682753.2",
+        "correctness_certificate": {
+          "bank": {
+            "original_bank": {
+              "method": "spherical_average",
+              "Q": 1152921504606846976,
+              "p": 19,
+              "d": 256,
+              "tau2": "1/2",
+              "bank_bad_event_bits": 160,
+              "B": 147573957004665159680,
+              "norm": 12148002181.62086,
+              "shape_factor": 1.1529215390989466e+18,
+              "shape_excess": 34492099684.20245,
+              "n": 1152921504606846976,
+              "m": 19,
+              "tilt_numerator": 542072936304,
+              "tilt_denominator": 18446744073709551616,
+              "certificate": {
+                "passed": true,
+                "log2_bad_probability_upper": "-160.00001037479250012691211399038471774728737278459692727570969132069186793154877",
+                "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+                "scope": "one honest iid coefficient bank; M exact repeated blocks"
+              }
+            },
+            "M": 1073741824
+          }
+        }
+      },
+      "rounding_backend": "c-pmf",
+      "dfr_budgets": {
+        "round_bits": 130,
+        "failure_bits": 128,
+        "source_bits": 136
+      },
+      "status": "verified",
+      "id": "c39cf5bbaac7975d416d",
+      "verified_spectral": {
+        "profile": "E60_30",
+        "Q": 1152921504606846976,
+        "M": 1073741824,
+        "p": 19,
+        "B_single": 147573957004665159680,
+        "B_QM": 158456329769086745064054456320,
+        "tilt_numerator": 542072936304,
+        "tilt_denominator": 18446744073709551616,
+        "log2_spectral_failure_upper": "-160.00001037479250012691211399038471774728737278459692727570969132069186793154877",
+        "delta_spec": "2^-160",
+        "epsilon_g": "2^-150",
+        "delta": "0.9",
+        "sigma_H": "8.74",
+        "sigma_source_exact_runtime": "778.7513569317823554262231445193110700114569668175175642489363310805966575819406739219149280305285735819225314629277277476451734775155263748256166344158472645044",
+        "sigma_pad_exact_runtime": "4844260933531809.566066706801476039573665657239517614938260636307500842342401688296061755015926636797703160648113746717021326763006930820101031297671556952499542",
+        "posterior_parameter_interval": [
+          "148.06057156933085995921987571971243738583560233589664747676538732806731269645392",
+          "148.06057156933085995921987571971243738583560233589664747676538732806731269645395"
+        ],
+        "current_theorem_required_parameter_interval": [
+          "148.05953529480536106638645139893234689743668946313975086304855666419133837678276",
+          "148.05953529480536106638645139893234689743668946313975086304855666419133846982778"
+        ],
+        "current_theorem_sampling_margin_lower": "0.00103627452549889283342432078009048839891287275689661371683066387597422662614",
+        "current_theorem_convolution_margin_lower": "0.165295539394810194829187432118670047613006618292388517321412160016401386465650",
+        "arithmetic": "80-digit directed Decimal, exact rational Chernoff witness, enclosed pi/logarithms",
+        "verified": true
+      },
+      "security": {
+        "hint": {
+          "record": "security/49838422a93d4b2ffe6c12a167cddd3c80a8e6fc73b8a6e4cbe2368d125a04c7.json",
+          "sha256": "adebf0b8f165e587667b9c345cdb390b67ba04b7dd9beec814ac9abc21a5bccc",
+          "min_bits": 141.01743875975325
+        },
+        "terminal": {
+          "record": "security/b53f5cd635b9e46730a7e6e6a8d96a633419523c50a981a683f69f1a791a3bbb.json",
+          "sha256": "782028b24ef0b27a80b97e3d0323157138c309feed87901333dfea68172ad596",
+          "min_bits": 134.2293363081253
+        },
+        "source": {
+          "record": "security/74278b3503079fe91534c9469fd2d522d02b357c340251475891b0ba81dc1f3f.json",
+          "sha256": "5c942d559054c01793726de69f6eb2d3527fa47f384e12774fb2c46c0b71fd3e",
+          "min_bits": 144.3804830031333
+        },
+        "internal": {
+          "record": "security/74278b3503079fe91534c9469fd2d522d02b357c340251475891b0ba81dc1f3f.json",
+          "sha256": "5c942d559054c01793726de69f6eb2d3527fa47f384e12774fb2c46c0b71fd3e",
+          "min_bits": 144.3804830031333
+        }
+      },
+      "dfr": {
+        "passed": true,
+        "source_log2_upper": "-4.65519389963808425290439547528778365181551056032009184530926515870003672467554193866763770768918778144960743235435757859575698655472158513601099361639375e13",
+        "reenc_log2_upper": "-128.520801772075202058947476878101843760959345901299065907578897739144551176125372410373107378343463802599139380203684269479421314780703135577735144304022",
+        "round_log2_upper": -130,
+        "theta_log2_upper": "-1.06360279011666354085403854154044993842673215056830543199520255787890815549576237663047173934099573600320665530375695517184489087025811803918484446966516e32",
+        "joint_log2_upper": "-128.078587466691657455651299265743713059646381379455174810508022393818173016592617800450833648611290671819621422015035198409283117506592642739894146974303",
+        "source_threshold_lower": "3.53898488218264040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e16",
+        "reenc_threshold_lower": "2.61854592789565573182426251166887085152547771068557474094434744281031346435348885469570959967499999999999999999999999999999999999999999999999999999999999e16",
+        "source_tilt": "0.0009117683838520416000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?",
+        "reenc_tilt": "7.046489931658831000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?e-15",
+        "budgets": {
+          "round_bits": 130,
+          "failure_bits": 128,
+          "source_bits": 136,
+          "theta_bits": 250,
+          "main_bits": 128.42257117206424
+        },
+        "rounding": {
+          "source_v": 278660226943515,
+          "re_u": 8708132091985,
+          "re_v": 1114640907774060,
+          "terminal_multiplier_upper": "928.987818471612763753015550233983143166902324050294863788255911409490042808626450000000000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "precision": 512,
+        "exact_pmf": false,
+        "c_rounding_certificate": {
+          "method": "C CRT-NTT CBD PMF convolution + convex-order stop-loss certificate",
+          "scope": "unconditional terminal-u rounding envelope, union over both signs and d coefficients; independent rounding vector required",
+          "eta": 4,
+          "k": 9,
+          "degree": 256,
+          "N": 9216,
+          "round_bits": 130,
+          "precision_bits": 512,
+          "pmf_length": 3579,
+          "stoploss_power": 1,
+          "stoploss_shift": 924,
+          "multiplier_upper": "928.98781847161276375301555023398314316690232405029486378825591140949004280862645",
+          "subgaussian_multiplier_upper": "942.30471389546989788272130988733994015060700304923019251412848685528207942537303",
+          "pmf_missing_mass_upper": "1.60451284150310047668418536831554095643480032123858553516463173902266666898013456e-150",
+          "probability_bound": "2^-130",
+          "certified": true,
+          "full_PRE_PMF": false,
+          "normal_approximation": false,
+          "certificate_file": "eta4_k9_d256_rb130.json",
+          "certificate_sha256": "3e0e4c8dfba43c73aca069b70de1a087659c7a2ec7bb889d1174ceea8bc827dd"
+        },
+        "method": "C CBD PMF convex-order rounding + shared-secret spectral MGF/CDF",
+        "scope": "fixed pair; one honest Enc and RE; ideal sampling; source u exact"
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@
 #error "The OpenFHE-style sampler requires IEEE binary32 float"
 #endif
 
-#define OPENFHE_MAX_WIDTH 0x1p40
+#define OPENFHE_MAX_WIDTH 0x1p54
 #define OPENFHE_SQRT_2PI 0x1.40d931ff62706p+1
 #define OPENFHE_CDF_CUTOFF 12.00610553538285
 #define OPENFHE_KARNEY_THRESHOLD 300.0
@@ -229,6 +229,28 @@ static int openfhe_b(lbpre_rng *rng, uint32_t k, double x)
     return (n&1) == 0;
 }
 
+/* For supplementary wide masks, form ceil(sd*k) and its fractional offset
+ * from the exact binary64 significand using integer arithmetic. Multiplying
+ * in double first can lose integer units once sd*k exceeds 2^53. The legacy
+ * arithmetic is retained for frozen L/M/H widths, preserving their streams. */
+static uint64_t openfhe_wide_origin(double sd, uint32_t k, double *offset)
+{
+    int exponent;
+    double fraction=frexp(sd,&exponent);
+    uint64_t significand=(uint64_t)ldexp(fraction,53);
+    unsigned shift;
+    __uint128_t product,integer,remainder;
+    if(exponent>53 || exponent<1) abort();
+    shift=(unsigned)(53-exponent);
+    product=(__uint128_t)significand*k;
+    integer=product>>shift;
+    remainder=product&(((__uint128_t)1<<shift)-1);
+    *offset=remainder?ldexp((double)(((__uint128_t)1<<shift)-remainder),-(int)shift):0;
+    if(remainder) ++integer;
+    if(integer>=(UINT64_C(1)<<62)) abort();
+    return (uint64_t)integer;
+}
+
 static int64_t openfhe_karney(const lbpre_gaussian *g, lbpre_rng *rng)
 {
     uint64_t j_bound = (uint64_t)ceil(g->stddev);
@@ -240,14 +262,18 @@ static int64_t openfhe_karney(const lbpre_gaussian *g, lbpre_rng *rng)
         double di0, x;
         if (!openfhe_p(rng,trials)) continue;
         sign = uniform_below(rng,2) ? 1 : -1;
-        di0 = g->stddev*k;
-        /* Avoid undefined float-to-int conversion and signed negation. A
-         * mathematically unrepresentable proposal terminates fail-closed;
-         * it is never silently clipped/resampled into a different tail law. */
-        if (!isfinite(di0) || di0 < 0 || di0 >= 0x1p62) abort();
-        i0 = (uint64_t)ceil(di0);
         j = uniform_below(rng,j_bound);
-        x = ((double)i0-di0)/g->stddev+(double)j/g->stddev;
+        if(g->stddev>0x1p40/OPENFHE_SQRT_2PI) {
+            double offset;
+            i0=openfhe_wide_origin(g->stddev,k,&offset);
+            x=offset/g->stddev+(double)j/g->stddev;
+        } else {
+            di0=g->stddev*k;
+            /* Unrepresentable tails terminate fail-closed, never clipped. */
+            if (!isfinite(di0) || di0 < 0 || di0 >= 0x1p62) abort();
+            i0=(uint64_t)ceil(di0);
+            x=((double)i0-di0)/g->stddev+(double)j/g->stddev;
+        }
         if (!isfinite(x)) abort();
         if (!(x < 1) || (x == 0 && sign < 0 && k == 0)) continue;
         for (h = 0; h < (uint64_t)k+1; ++h) {

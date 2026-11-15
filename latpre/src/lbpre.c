@@ -2,8 +2,8 @@
 #include <string.h>
 #include "internal.h"
 
-#define MAX_K 8u
-#define MAX_ELL 9u
+#define MAX_K 9u
+#define MAX_ELL 10u
 #define POLY_BYTES(p) (32u*(p)->q_bits)
 #define A_AT(c,i,j) ((c)->a_ntt+((size_t)(i)*(c)->p->k+(j))*LBPRE_D)
 static uint64_t addq(uint64_t a, uint64_t b, uint64_t q)
@@ -13,9 +13,8 @@ static void hash_u64(sha3_t *s, uint64_t x)
     uint8_t b[8]; for(unsigned i=0;i<8;++i) b[i]=(uint8_t)(x>>(8*i));
     sha3_absorb(s,b,sizeof(b));
 }
-lbpre_ctx *lbpre_setup(unsigned logQ, const uint8_t matrix_seed[LBPRE_SEED_BYTES])
+static lbpre_ctx *setup_parameters(const lbpre_params *p, const uint8_t matrix_seed[LBPRE_SEED_BYTES])
 {
-    const lbpre_params *p=lbpre_params_get(logQ);
     if(!p || !matrix_seed || p->k>MAX_K || p->ell>MAX_ELL) return NULL;
     lbpre_ctx *ctx=calloc(1,sizeof(*ctx));
     if(!ctx) return NULL;
@@ -28,8 +27,8 @@ lbpre_ctx *lbpre_setup(unsigned logQ, const uint8_t matrix_seed[LBPRE_SEED_BYTES
         lbpre_ctx_free(ctx); return NULL;
     }
     sha3_t s; lbpre_xof_begin(&s,"LatPRE-LMH-v1/PUBLIC-CONTEXT");
-    hash_u64(&s,logQ); hash_u64(&s,p->logM); hash_u64(&s,p->q);
-    sha3_absorb(&s,(const uint8_t *)lbpre_parameter_source_sha256(),64);
+    hash_u64(&s,p->logQ); hash_u64(&s,p->logM); hash_u64(&s,p->q);
+    sha3_absorb(&s,(const uint8_t *)lbpre_parameter_context_sha256(p),64);
     /* Keep the frozen sampler context identifier independent of its display name. */
     {
         const char *sampler=lbpre_gaussian_context_id();
@@ -46,6 +45,10 @@ lbpre_ctx *lbpre_setup(unsigned logQ, const uint8_t matrix_seed[LBPRE_SEED_BYTES
     }
     lbpre_secure_zero(&rng,sizeof(rng)); return ctx;
 }
+lbpre_ctx *lbpre_setup(unsigned logQ, const uint8_t matrix_seed[LBPRE_SEED_BYTES])
+{ return setup_parameters(lbpre_params_get(logQ),matrix_seed); }
+lbpre_ctx *lbpre_setup_named(const char *name, const uint8_t matrix_seed[LBPRE_SEED_BYTES])
+{ return setup_parameters(lbpre_params_named(name),matrix_seed); }
 void lbpre_ctx_free(lbpre_ctx *ctx)
 {
     if(!ctx) return;

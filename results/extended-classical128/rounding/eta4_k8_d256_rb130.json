@@ -1,0 +1,20 @@
+{
+  "method": "C CRT-NTT CBD PMF convolution + convex-order stop-loss certificate",
+  "scope": "unconditional terminal-u rounding envelope, union over both signs and d coefficients; independent rounding vector required",
+  "eta": 4,
+  "k": 8,
+  "degree": 256,
+  "N": 8192,
+  "round_bits": 130,
+  "precision_bits": 512,
+  "pmf_length": 3373,
+  "stoploss_power": 1,
+  "stoploss_shift": 871,
+  "multiplier_upper": "875.76578601955770868760228218993490968502167465174348896488589901652259788384455",
+  "subgaussian_multiplier_upper": "888.41340418604840211026082289455577379555352560841896292856158396230983318108441",
+  "pmf_missing_mass_upper": "1.36905302461910994979848959330637613518882511489125068951247990524334446036347092e-150",
+  "probability_bound": "2^-130",
+  "certified": true,
+  "full_PRE_PMF": false,
+  "normal_approximation": false
+}

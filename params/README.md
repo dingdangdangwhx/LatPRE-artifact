@@ -43,3 +43,21 @@ Gaussian sampler. See each script's `--help` and `backends/README.md`.
 contains the certified rounding envelopes. The spectral and Gaussian checks
 in `lib/` use directed decimal interval calculations and rational witnesses.
 Vendored source licenses and pinned hashes are included under `vendor/`.
+
+## Supplementary parameter sets
+
+`extended_profiles.json` records the additional budget combinations; candidates,
+full security records, C rounding certificates and measured costs are retained
+in `../results/extended-classical128/`. They do not replace `profiles.json`.
+
+```sh
+sage -python params/extended_certify.py --verify-only
+```
+
+This checks the saved candidates and repeats the directed correctness calculation,
+without rerunning lattice attacks or C convolutions. To redo the small finite search,
+run `python3 params/extended_search.py`, then `make -C params rounding` and
+`sage -python params/extended_certify.py`; only missing exact lattice instances and
+rounding records are recomputed, serially. `python3 params/export_extended.py`
+exports the verified selection to the named C profiles. The search is a limited
+grid, not a global optimization.

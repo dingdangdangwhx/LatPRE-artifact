@@ -27,7 +27,7 @@ def source_files():
         if relative == Path("."):
             dirs[:] = [name for name in dirs if name in TOP]
         if relative == Path("results"):
-            dirs[:] = []
+            dirs[:] = [name for name in dirs if name == "extended-classical128"]
         if relative == Path("params"):
             dirs[:] = [name for name in dirs if name != "results"]
         if relative == Path("baseline/cic25"):
@@ -47,7 +47,8 @@ def source_files():
                 continue
         elif rel.parts[0] not in TOP:
             continue
-        if rel.parts[0] == "results" and len(rel.parts) != 2:
+        if (rel.parts[0] == "results" and len(rel.parts) != 2
+                and rel.parts[1] != "extended-classical128"):
             continue
         if rel.parts[0] == "params" and ("results" in rel.parts or path.name == "verification.json"):
             continue

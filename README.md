@@ -5,7 +5,7 @@ Proxy Re-Encryption with Security against Honest Re-Encryption Attacks**.
 
 | Directory | Contents |
 | --- | --- |
-| `params/` | L/M/H parameters and verification scripts |
+| `params/` | Frozen L/M/H and supplementary parameters, search and verification scripts |
 | `latpre/` | LatPRE C implementation, tests and benchmarks |
 | `baseline/cic25/` | CiC25 single-hop comparison |
 | `hybrid-mail/` | Classical and hybrid Proton forwarding prototype |
@@ -41,6 +41,13 @@ The classical-128 profiles are L `(Q,M)=(2^20,2^10)`, M `(2^30,2^15)`, and H
 `(2^40,2^20)`. Exact constants are in `params/profiles.json`. See
 `params/README.md` for optional parameter recomputation, which requires SageMath.
 The default run checks saved evidence without rerunning the lattice estimator.
+
+Additional Q/M combinations, candidate comparisons and implementation results
+are in [`results/extended-classical128/`](results/extended-classical128/).
+See its [`parameters.csv`](results/extended-classical128/parameters.csv),
+[`communication.csv`](results/extended-classical128/communication.csv) and
+[`runtime.csv`](results/extended-classical128/runtime.csv) for the seven optional sets.
+These optional sets leave the paper's L/M/H parameters and default benchmarks unchanged.
 
 LatPRE uses the OpenFHE-style Gaussian sampler. Rekey sizes include the 32-byte
 seed, and key sizes include both key roles. `ReKeyGen` excludes NTT preparation;

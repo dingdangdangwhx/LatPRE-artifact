@@ -4,6 +4,7 @@
 #include "lbpre_ring.h"
 #include "lbpre_sampling.h"
 #define LBPRE_ID_BYTES 64
+const char *lbpre_parameter_context_sha256(const lbpre_params *p);
 struct lbpre_ctx {
     const lbpre_params *p;
     lbpre_ring ring;

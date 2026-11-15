@@ -38,6 +38,8 @@ lbpre_rng *lbpre_rng_new(const uint8_t seed[LBPRE_SEED_BYTES]);
 void lbpre_rng_free(lbpre_rng *rng);
 int lbpre_random_seed(uint8_t seed[LBPRE_SEED_BYTES]);
 lbpre_ctx *lbpre_setup(unsigned logQ, const uint8_t matrix_seed[LBPRE_SEED_BYTES]);
+/* Named selection also distinguishes supplementary sets sharing the same Q. */
+lbpre_ctx *lbpre_setup_named(const char *name, const uint8_t matrix_seed[LBPRE_SEED_BYTES]);
 void lbpre_ctx_free(lbpre_ctx *ctx);
 const lbpre_params *lbpre_ctx_params(const lbpre_ctx *ctx);
 int lbpre_export_matrix(const lbpre_ctx *ctx, uint8_t *out, size_t outlen);

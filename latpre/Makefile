@@ -13,8 +13,8 @@ MPFR_LIBS ?= $(shell pkg-config --libs mpfr gmp 2>/dev/null || echo '-lmpfr -lgm
 
 SOURCES = params serial registry lbpre ring sampling
 OBJECTS = $(addprefix $(BUILD)/,$(addsuffix .o,$(SOURCES))) $(BUILD)/sha3_t.o $(BUILD)/keccakf1600.o
-HEADERS = $(wildcard include/*.h) src/internal.h src/sampling_openfhe.inc
-TESTS = test_ring test_sampling_openfhe test_sampling_cbd test_core_edges test_serial test_lbpre
+HEADERS = $(wildcard include/*.h) src/internal.h src/sampling_openfhe.inc src/extended_params.inc bench/extended_expected.inc
+TESTS = test_ring test_sampling_openfhe test_sampling_cbd test_core_edges test_serial test_lbpre test_extended
 TEST_BINS = $(addprefix $(BUILD)/,$(TESTS))
 
 .PHONY: all test bench sanitize clean

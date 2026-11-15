@@ -27,12 +27,14 @@ typedef struct {
     unsigned logQ, base;
     uint64_t q;
     size_t pk, sk, matrix, rk, source, terminal;
+    const char *name;
 } expected_sizes;
 /* Independently frozen selected-profile wire-size expectations. */
 static const expected_sizes EXPECTED[] = {
-    {20, 643, UINT64_C(265753601), 8960, 7168, 17920, 53792, 3808, 1824},
-    {30, 3241, UINT64_C(34016143361), 13440, 11200, 33600, 100832, 5792, 2240},
-    {40, 2086641, UINT64_C(4354066046977), 18816, 16128, 56448, 112928, 8320, 2912},
+    {20, 643, UINT64_C(265753601), 8960, 7168, 17920, 53792, 3808, 1824, "L"},
+    {30, 3241, UINT64_C(34016143361), 13440, 11200, 33600, 100832, 5792, 2240, "M"},
+    {40, 2086641, UINT64_C(4354066046977), 18816, 16128, 56448, 112928, 8320, 2912, "H"},
+#include "extended_expected.inc"
 };
 #define PROFILE_COUNT (sizeof(EXPECTED) / sizeof(EXPECTED[0]))
 typedef struct {
@@ -99,11 +101,11 @@ static void fixture_init(fixture *f, const expected_sizes *e) {
     uint8_t seed[LBPRE_SEED_BYTES];
     size_t i;
     memset(f, 0, sizeof(*f));
-    f->p = lbpre_params_get(e->logQ);
+    f->p = lbpre_params_named(e->name);
     if (f->p == NULL || f->p->q != e->q || f->p->base != e->base) die("parameter identity mismatch");
     seed_bytes(f->matrix_seed, e->logQ, 1);
     seed_bytes(seed, e->logQ, 3);
-    f->ctx = lbpre_setup(e->logQ, f->matrix_seed);
+    f->ctx = lbpre_setup_named(e->name, f->matrix_seed);
     f->rng = lbpre_rng_new(seed);
     if (f->ctx == NULL || f->rng == NULL) die("fixture Setup/RNG failed");
     f->pklen = lbpre_public_key_bytes(f->p); f->sklen = lbpre_secret_key_bytes(f->p);
@@ -158,7 +160,7 @@ static void prepare_operation(fixture *f, operation op) {
 static int invoke(fixture *f, operation op) {
     switch (op) {
     case OP_SETUP:
-        f->temporary_ctx = lbpre_setup(f->p->logQ, f->matrix_seed);
+        f->temporary_ctx = lbpre_setup_named(f->p->name, f->matrix_seed);
         return f->temporary_ctx == NULL ? LBPRE_ERR_MEMORY : LBPRE_OK;
     case OP_EXPORT_MATRIX:
         return lbpre_export_matrix(f->ctx, f->matrix, f->matrix_len);
@@ -310,7 +312,7 @@ static void output_csv(FILE *out, const result *rows, size_t count) {
         fprintf(out, ",%d,", lbpre_gaussian_is_approximate());
         csv_string(out, lbpre_gaussian_target());
         fprintf(out, ",%d,", lbpre_gaussian_has_certified_error_bound());
-        csv_string(out, lbpre_parameter_source_sha256());
+        csv_string(out, r->name[0]=='E'?LBPRE_EXTRA_SOURCE_SHA256:lbpre_parameter_source_sha256());
         fprintf(out, ",%s,%u,%zu,32\n", r->name, r->logM, r->rklen - 32u);
     }
 }
@@ -318,6 +320,8 @@ static void output_csv(FILE *out, const result *rows, size_t count) {
 static void output_json(FILE *out, const result *rows, size_t count, int argc, char **argv) {
     struct utsname host;
     size_t i, j;
+    int supplementary=0;
+    for(i=0;i<count;i++) if(rows[i].name[0]=='E') supplementary=1;
     fputs("{\n  \"schema\":\"lbpre-public-api-benchmark-v3\",\n  \"clock\":", out);
     json_string(out, timer_name());
     fprintf(out, ",\n  \"clock_tick_numer\":%u,\n  \"clock_tick_denom\":%u,\n", timer_numer, timer_denom);
@@ -339,8 +343,8 @@ static void output_json(FILE *out, const result *rows, size_t count, int argc, c
     fputs(",\n  \"gaussian_target\":", out); json_string(out, lbpre_gaussian_target());
     fprintf(out, ",\n  \"gaussian_sampler_error_bound_certified\":%s",
             lbpre_gaussian_has_certified_error_bound()?"true":"false");
-    fputs(",\n  \"parameter_sha256\":", out); json_string(out, lbpre_parameter_source_sha256());
-    fputs(",\n  \"profile_id\":", out); json_string(out, lbpre_parameter_profile_id());
+    fputs(",\n  \"parameter_sha256\":", out); json_string(out, supplementary?LBPRE_EXTRA_SOURCE_SHA256:lbpre_parameter_source_sha256());
+    fputs(",\n  \"profile_id\":", out); json_string(out, supplementary?"LATPRE-CLASSICAL128-SUPPLEMENT-v1":lbpre_parameter_profile_id());
     fputs(",\n  \"proxy_secret\":false,\n  \"rekey_seed_bytes\":32", out);
     fputs(",\n  \"compiler\":", out); json_string(out, __VERSION__);
     fputs(",\n  \"build_timestamp\":", out); json_string(out, __DATE__ " " __TIME__);
@@ -400,6 +404,23 @@ static void choose_logQ(const char *text, unsigned selected[PROFILE_COUNT]) {
     if (start == text && !*text) die("empty --logQ");
 }
 
+static void choose_profiles(const char *text, unsigned selected[PROFILE_COUNT]) {
+    const char *start=text;
+    memset(selected,0,PROFILE_COUNT*sizeof(*selected));
+    if(!*start) die("empty --profiles");
+    while(*start) {
+        const char *end=strchr(start,',');
+        size_t length=end?(size_t)(end-start):strlen(start),i;
+        for(i=0;i<PROFILE_COUNT;i++)
+            if(strlen(EXPECTED[i].name)==length && !strncmp(EXPECTED[i].name,start,length)) break;
+        if(i==PROFILE_COUNT) die("unsupported --profiles name");
+        selected[i]=1;
+        if(!end) break;
+        start=end+1;
+        if(!*start) die("trailing comma in --profiles");
+    }
+}
+
 int main(int argc, char **argv) {
     size_t samples = 1000, warmup = 10, count = 0, i;
     int all_operations = 0;
@@ -415,7 +436,7 @@ int main(int argc, char **argv) {
 #endif
     for (i = 1; i < (size_t)argc; i++) {
         if (!strcmp(argv[i], "--help")) {
-            puts("Usage: bench_lbpre [--samples 1000] [--warmup 10] [--logQ 20,30,40] [--csv FILE|-] [--json FILE|-] [--all-operations]");
+            puts("Usage: bench_lbpre [--samples 1000] [--warmup 10] [--logQ 20,30,40 | --profiles L,M,H,E20_10,E20_15,E20_20,E25_15,E30_20,E50_25,E60_30] [--csv FILE|-] [--json FILE|-] [--all-operations]");
             free(rows); return EXIT_SUCCESS;
         }
         if (!strcmp(argv[i], "--all-operations")) { all_operations = 1; continue; }
@@ -423,6 +444,7 @@ int main(int argc, char **argv) {
         if (!strcmp(argv[i], "--samples")) samples = number(argv[++i], 100000);
         else if (!strcmp(argv[i], "--warmup")) warmup = number(argv[++i], 100000);
         else if (!strcmp(argv[i], "--logQ")) { choose_logQ(argv[++i], selected); }
+        else if (!strcmp(argv[i], "--profiles")) { choose_profiles(argv[++i], selected); }
         else if (!strcmp(argv[i], "--csv")) csv_path = argv[++i];
         else if (!strcmp(argv[i], "--json")) json_path = argv[++i];
         else die("unknown option");

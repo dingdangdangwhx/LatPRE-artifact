@@ -1,0 +1,23 @@
+Native tests
+250758 ring checks passed
+OpenFHE sampler tests: OK (independent CDF/Karney KATs, std300 boundary, RNG consumption/history, six L/M/H profile widths, 100000 small-PMF +100000 wide-pad samples; no certified error bound)
+exact CBD sampler: 25 independent KATs, L/M/H, chunk boundaries through eta257, statistics and 64-bit uniform streams passed
+158794 codec/registry/context edge checks passed
+PASS: 2976 polynomial codec cases, 6 moduli, all 1..62 bit widths, independent exact oracles
+PASS logQ=20 base=643 PK=8960 SK=7168 A=17920 RK=53792 source=3808 RE=1824
+PASS logQ=30 base=3241 PK=13440 SK=11200 A=33600 RK=100832 source=5792 RE=2240
+PASS logQ=40 base=2086641 PK=18816 SK=16128 A=56448 RK=112928 source=8320 RE=2912
+All three L/M/H public-API parameter profiles passed; backend=scalar uint128 Montgomery NTT
+Supplementary profiles: OK (named Q/M selection, repeated forwarding, all source/terminal round trips)
+
+ASan/UBSan tests
+250758 ring checks passed
+OpenFHE sampler tests: OK (independent CDF/Karney KATs, std300 boundary, RNG consumption/history, six L/M/H profile widths, 100000 small-PMF +100000 wide-pad samples; no certified error bound)
+exact CBD sampler: 25 independent KATs, L/M/H, chunk boundaries through eta257, statistics and 64-bit uniform streams passed
+158794 codec/registry/context edge checks passed
+PASS: 2976 polynomial codec cases, 6 moduli, all 1..62 bit widths, independent exact oracles
+PASS logQ=20 base=643 PK=8960 SK=7168 A=17920 RK=53792 source=3808 RE=1824
+PASS logQ=30 base=3241 PK=13440 SK=11200 A=33600 RK=100832 source=5792 RE=2240
+PASS logQ=40 base=2086641 PK=18816 SK=16128 A=56448 RK=112928 source=8320 RE=2912
+All three L/M/H public-API parameter profiles passed; backend=scalar uint128 Montgomery NTT
+Supplementary profiles: OK (named Q/M selection, repeated forwarding, all source/terminal round trips)
