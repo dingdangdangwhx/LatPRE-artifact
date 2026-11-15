@@ -42,8 +42,11 @@ The classical-128 profiles are L `(Q,M)=(2^20,2^10)`, M `(2^30,2^15)`, and H
 `params/README.md` for optional parameter recomputation, which requires SageMath.
 The default run checks saved evidence without rerunning the lattice estimator.
 
-Additional Q/M combinations, candidate comparisons and implementation results
-are in [`results/extended-classical128/`](results/extended-classical128/).
+Supplementary classical-128 results cover seven Q/M configurations (including
+the paper's Light profile), with budgets up to `(Q,M)=(2^60,2^30)`.
+The [results overview](results/extended-classical128/README.md) includes candidate
+comparisons, verified parameters, communication costs and single-thread benchmarks
+from 1,000 measurements per operation.
 See its [`parameters.csv`](results/extended-classical128/parameters.csv),
 [`communication.csv`](results/extended-classical128/communication.csv) and
 [`runtime.csv`](results/extended-classical128/runtime.csv) for the seven optional sets.
